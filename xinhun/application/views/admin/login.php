@@ -1,15 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1">
-    <title>漂亮的easyui后台框架演示-css后台模板-www.16sucai.com</title>
-    <meta charset="UTF8">
-    <link href="/css/default.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="/js/themes/default/easyui.css" />
-    <link rel="stylesheet" type="text/css" href="/js/themes/icon.css" />
-    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.easyui.js"></script>
-</head>
-<body>
+<?php $this->load->view("admin/public_header");?>
 <div class="easyui-panel" title="Register" style="width:400px;padding:30px 60px">
 <div style="margin-bottom:20px">
 <div>Email:</div>

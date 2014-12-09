@@ -1,15 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1">
-    <title>漂亮的easyui后台框架演示-css后台模板-www.16sucai.com</title>
-    <link href="/css/default.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="/js/themes/default/easyui.css" />
-    <link rel="stylesheet" type="text/css" href="/js/themes/icon.css" />
-    <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.easyui.js"></script>
-
+<?php $this->load->view("admin/public_header");?>
 	<script type="text/javascript" src='/js/outlook2.js'> </script>
-
     <script type="text/javascript">
 	 var _menus = {"menus":[
 						{"menuid":"1","icon":"icon-sys","menuname":"系统管理",
@@ -118,9 +108,6 @@
 		
 
     </script>
-
-</head>
-<body class="easyui-layout" style="overflow-y: hidden"  scroll="no">
 <noscript>
 <div style=" position:absolute; z-index:100000; height:2046px;top:0px;left:0px; width:100%; background:white; text-align:center;">
     <img src="images/noscript.gif" alt='抱歉，请开启脚本支持！' />
