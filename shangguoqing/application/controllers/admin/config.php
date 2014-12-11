@@ -4,7 +4,7 @@ class config extends CI_Controller{
 		parent::__construct();
 		$this->load->model('config_model');
 	}
-	public function index($page=0){
+	public function index(){
 		$data = $this->config_model->get_list();
 		$this->load->view("admin/config_list",$data);
 	}

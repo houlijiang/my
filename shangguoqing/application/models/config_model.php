@@ -4,17 +4,14 @@ class config_model extends MY_Model{
 		parent::__construct();
 		$this->load->library("data");
 	}
-	public function get_list($page=1,$page_size=10){
+	public function get_list(){
 		$post = $this->input->post();
-		
 		$sql = "select * from config where is_delete=0";
-		$data['total'] = $this->data->getNums($sql);
-		$page = $page<=1?1:$page;
-		$page = ($page-1)*$page_size;
-		$sql .=" limit $page,$page_size";
-		$data['list'] = $this->data->getAll($sql);
-		
-		return $data;
+		$post['total'] = $this->data->getNums($sql);
+		$this->page($post);
+		$sql .=" limit {$post['limit']},{$post['page_size']}";
+		$post['list'] = $this->data->getAll($sql);
+		return $post;
 	}
 	public function update(){
 		$post = $this->input->post();

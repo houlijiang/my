@@ -4,10 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>简单实用国产jQuery UI框架 - DWZ富客户端框架(J-UI.com)</title>
 
-<link href="/themes/default/style.css" rel="stylesheet" type="text/css" media="screen"/>
-<link href="/themes/css/core.css" rel="stylesheet" type="text/css" media="screen"/>
-<link href="/themes/css/print.css" rel="stylesheet" type="text/css" media="print"/>
-<link href="/uploadify/css/uploadify.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="/dwz/themes/default/style.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="/dwz/themes/css/core.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="/dwz/themes/css/print.css" rel="stylesheet" type="text/css" media="print"/>
+<link href="/dwz/uploadify/css/uploadify.css" rel="stylesheet" type="text/css" media="screen"/>
 <!--[if IE]>
 <link href="themes/css/ieHack.css" rel="stylesheet" type="text/css" media="screen"/>
 <![endif]-->
@@ -16,19 +16,19 @@
 <script src="js/speedup.js" type="text/javascript"></script>
 <![endif]-->
 
-<script src="/js/jquery-1.7.2.js" type="text/javascript"></script>
-<script src="/js/jquery.cookie.js" type="text/javascript"></script>
-<script src="/js/jquery.validate.js" type="text/javascript"></script>
-<script src="/js/jquery.bgiframe.js" type="text/javascript"></script>
-<script src="/xheditor/xheditor-1.2.1.min.js" type="text/javascript"></script>
-<script src="/xheditor/xheditor_lang/zh-cn.js" type="text/javascript"></script>
-<script src="/uploadify/scripts/jquery.uploadify.js" type="text/javascript"></script>
-<script src="/js/dwz.min.js" type="text/javascript"></script>
-<script src="/js/dwz.regional.zh.js" type="text/javascript"></script>
+<script src="/dwz/js/jquery-1.7.2.js" type="text/javascript"></script>
+<script src="/dwz/js/jquery.cookie.js" type="text/javascript"></script>
+<script src="/dwz/js/jquery.validate.js" type="text/javascript"></script>
+<script src="/dwz/js/jquery.bgiframe.js" type="text/javascript"></script>
+<script src="/dwz/xheditor/xheditor-1.2.1.min.js" type="text/javascript"></script>
+<script src="/dwz/xheditor/xheditor_lang/zh-cn.js" type="text/javascript"></script>
+<script src="/dwz/uploadify/scripts/jquery.uploadify.js" type="text/javascript"></script>
+<script src="/dwz/js/dwz.min.js" type="text/javascript"></script>
+<script src="/dwz/js/dwz.regional.zh.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 $(function(){
-	DWZ.init("/js/dwz.frag.xml", {
+	DWZ.init("/dwz/dwz.frag.xml", {
 		loginUrl:"/admin/user/login", loginTitle:"登录",	// 弹出登录对话框
 //		loginUrl:"login.html",	// 跳到登录页面
 		statusCode:{ok:200, error:300, timeout:301}, //【可选】
@@ -36,7 +36,7 @@ $(function(){
 		debug:false,	// 调试模式 【true|false】
 		callback:function(){
 			initEnv();
-			$("#themeList").theme({themeBase:"themes"}); // themeBase 相对于index页面的主题base路径
+			$("#themeList").theme({themeBase:"/dwz/themes"}); // themeBase 相对于index页面的主题base路径
 		}
 	});
 });
@@ -62,11 +62,11 @@ $(function(){
 						</ul>
 					</li>
 					<li><a href="https://me.alipay.com/dwzteam" target="_blank">捐赠</a></li>
-					<li><a href="changepwd.html" target="dialog" width="600">设置</a></li>
+					<li><a href="/admin/user/change_pwd" target="dialog" width="600">设置</a></li>
 					<li><a href="http://www.cnblogs.com/dwzjs" target="_blank">博客</a></li>
 					<li><a href="http://weibo.com/dwzui" target="_blank">微博</a></li>
 					<li><a href="http://bbs.dwzjs.com" target="_blank">论坛</a></li>
-					<li><a href="login.html">退出</a></li>
+					<li><a href="/admin/user/logout">退出</a></li>
 				</ul>
 				<ul class="themeList" id="themeList">
 					<li theme="default"><div class="selected">蓝色</div></li>
@@ -100,7 +100,7 @@ $(function(){
 							<li><a href="tabsPage.html" target="navTab">主框架面板</a>
 								<ul>
 									<li><a href="/admin/home/main" target="navTab" rel="main">我的主页</a></li>
-									<li><a href="/admin/config" target="navTab" rel="main">站点配置</a></li>
+									<li><a href="/admin/config" target="navTab" rel="config">站点配置</a></li>
 									<li><a href="http://www.baidu.com" target="navTab" rel="page1">页面一(外部页面)</a></li>
 									<li><a href="demo_page1.html" target="navTab" rel="page1" fresh="false">替换页面一</a></li>
 									<li><a href="demo_page2.html" target="navTab" rel="page2">页面二</a></li>

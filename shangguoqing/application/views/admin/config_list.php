@@ -1,9 +1,7 @@
 <form id="pagerForm" method="post" action="/admin/config/index">
-	<input type="hidden" name="status" value="${param.status}">
-	<input type="hidden" name="keywords" value="${param.keywords}" />
 	<input type="hidden" name="pageNum" value="1" />
-	<input type="hidden" name="numPerPage" value="${model.numPerPage}" />
-	<input type="hidden" name="orderField" value="${param.orderField}" />
+	<input type="hidden" name="numPerPage" value="<?php echo $page_size?>" />
+	
 </form>
 
 
@@ -75,6 +73,7 @@
 		<div class="pages">
 			<span>显示</span>
 			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<option value="10">10</option>
 				<option value="20">20</option>
 				<option value="50">50</option>
 				<option value="100">100</option>
@@ -83,7 +82,7 @@
 			<span>条，共<?php echo $total?>条</span>
 		</div>
 		
-		<div class="pagination" targetType="navTab" totalCount="200" numPerPage="20" pageNumShown="10" currentPage="1"></div>
+		<div class="pagination" targetType="navTab" totalCount="<?php echo $total?>" numPerPage="<?php echo $page_size?>" pageNumShown="10" currentPage="<?php echo $cur_page?>"></div>
 
 	</div>
 </div>

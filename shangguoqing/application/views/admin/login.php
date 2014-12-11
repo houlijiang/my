@@ -1,25 +1,39 @@
-<?php $this->load->view("admin/public_header");?>
-<div class="easyui-panel" title="Register" style="width:400px;padding:30px 60px">
-<div style="margin-bottom:20px">
-<div>Email:</div>
-<input class="easyui-textbox" data-options="prompt:'Enter a email address...',validType:'email'" style="width:100%;height:32px">
-</div>
-<div style="margin-bottom:20px">
-<div>First Name:</div>
-<input class="easyui-textbox" style="width:100%;height:32px">
-</div>
-<div style="margin-bottom:20px">
-<div>Last Name:</div>
-<input class="easyui-textbox" style="width:100%;height:32px">
-</div>
-<div style="margin-bottom:20px">
-<div>Company:</div>
-<input class="easyui-textbox" style="width:100%;height:32px">
-</div>
-<div>
-<a href="#" class="easyui-linkbutton" iconCls="icon-ok" style="width:100%;height:32px">Register</a>
-</div>
-</div>
-</body>
-</html>
 
+<div class="pageContent">
+	
+	<form method="post" action="/admin/user/check_login" class="pageForm" onsubmit="return validateCallback(this, dialogAjaxDone)">
+		<div class="pageFormContent" layoutH="58">
+			<div class="unit">
+				<label>用户名：</label>
+				<input type="text" name="username" size="30" class="required"/>
+			</div>
+			<div class="unit">
+				<label>密码：</label>
+				<input type="password" name="password" size="30" class="required"/>
+			</div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">提交</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+	
+</div>
+<script type="text/javascript">
+function dialogAjaxDone(json){
+    DWZ.ajaxDone(json);
+    if (json.statusCode == DWZ.statusCode.ok){
+          if (json.navTabId){
+              navTab.reload(json.forwardUrl, {}, json.navTabId);
+
+          }
+
+          $.pdialog.closeCurrent();
+    }
+
+}
+
+
+</script>
