@@ -4,10 +4,7 @@ class MY_model extends CI_Model{
 	public $message = '操作成功';
 	public function __construct(){
 		parent::__construct();
-		$user_id = $this->session->userdata("user_id");
-		if(empty($user_id)){
-		//	$this->tojson(301,'会话超时');
-		}
+		$this->load->library("data");
 	}
 	public function tojson($code=100,$message='',$url=''){
 		$arr = array(
@@ -29,4 +26,61 @@ class MY_model extends CI_Model{
 		$page = $page<=1?1:$page;
 		$post['limit'] = ($page-1)*$page_size;
 	}
+    function get_fields($table){
+    	$fields = $this->data->db->field_data($table);
+    	foreach($fields as $f){
+    		$arr[]=$f->name;
+    	}
+    	return $arr;
+    }
+	public function update($table=''){
+		$id = $this->input->post('id');
+		$temp = $post = $this->input->post();
+		foreach ($post as $k=>$v){
+		if(!in_array($k, $this->get_fields($table)))
+			unset($post[$k]);
+		}
+		if(intval($id)>0){
+			$res = $this->data->update($table,$post,array('id'=>$id));
+			
+		}else{
+			if(in_array("create_time", $this->get_fields($table))){
+				$post['create_time'] = date("Y-m-d H:i:s");
+			}
+			$res = $this->data->insert($table,$post);
+			
+		}
+		if(!$res){
+			$this->statusCode = 300;
+			$this->message = "删除失败!";
+		}
+		
+	}
+    function del($table,$id){
+   		$res = $this->data->update($table,array('is_delete'=>1),array('id'=>intval($id)));
+		if(!$res){
+			$this->statusCode = 300;
+			$this->message = "删除失败!";
+		}
+    }
+    function get_info($table,$id){
+    	if(intval($id)>0){
+    		$query = $this->data->db->get_where($table,array('id'=>intval($id)));
+    		$info = $query->row_array();
+    	}else{
+    		$fields = $this->data->db->field_data($table);
+			foreach ($fields as $field)
+			{
+				if($field->type=='int'){
+						$val = 0;
+				}else{
+					$val = '';
+				}
+				$info[$field->name] = $val;
+			} 
+    		
+    	}
+    	return $info;
+	    	
+    }
 }

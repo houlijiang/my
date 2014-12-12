@@ -1,5 +1,5 @@
 <?php
-class home extends CI_Controller{
+class home extends MY_Controller{
 	public function index(){
 		$this->load->view("admin/home");
 	}

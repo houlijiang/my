@@ -1,10 +1,5 @@
 <?php
-class user_model extends CI_Model{
-	public function __construct(){
-		parent::__construct();
-		$this->load->library("data");
-	}
-	
+class user_model extends MY_Model{
 	//验证登录
 	public function check_login(){
 		$post = $this->input->post();
@@ -27,6 +22,6 @@ class user_model extends CI_Model{
 		'user_name'=>$row['user_name']
 		);
 		$this->session->set_userdata($arr);
-		tojson(200,'登录成功','/admin/config','main');
+		tojson(200,'登录成功');
 	}
 }

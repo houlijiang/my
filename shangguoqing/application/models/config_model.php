@@ -1,9 +1,5 @@
 <?php
 class config_model extends MY_Model{
-	public function __construct(){
-		parent::__construct();
-		$this->load->library("data");
-	}
 	public function get_list(){
 		$post = $this->input->post();
 		$sql = "select * from config where is_delete=0";
@@ -31,6 +27,6 @@ class config_model extends MY_Model{
 			);
 			$this->data->insert('config',$udata);
 		}
-		$this->tojson(200,'操作成功','/admin/config');
+		tojson(200,'操作成功',0);
 	}
 }

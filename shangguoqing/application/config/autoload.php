@@ -5,7 +5,7 @@ $autoload['packages'] = array();
 $autoload['libraries'] = array('session');
 
 
-$autoload['helper'] = array('url','fun');
+$autoload['helper'] = array('url','fun','form');
 
 
 /*

@@ -1,16 +1,30 @@
 <?php
-class goods extends CI_Controller{
+class goods extends MY_Controller{
+	public function __construct(){
+		parent::__construct();
+		$this->load->model("goods_model");
+		$this->load->model("category_model");
+	}
 	public function index(){
-		$this->load->view("admin/goods_list");
+		$data = $this->goods_model->get_list();
+		$data['cat_list'] =$this->category_model->data_list();
+		$this->load->view("admin/goods_list",$data);
 	}
-	public function login(){
-		$this->load->view("admin/login");
+	public function update(){
+		$this->goods_model->update('goods');
+		$this->tojson($this->goods_model);
 	}
-	public function logout(){
+	public function edit($id){
+		$data['info'] = $this->goods_model->get_info('goods',$id);
 		
-		redirect("/admin/user/login");
+		$data['cat_list'] =$this->category_model->data_list();
+		$this->load->view("/admin/goods_edit",$data);
 	}
 	public function add(){
-		$this->load->view("admin/user_add");
+		$this->edit(0);
+	}
+	public function del($id){
+		$this->del($id);
+		$this->tojson($this->goods_model);
 	}
 }

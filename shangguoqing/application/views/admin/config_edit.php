@@ -12,7 +12,7 @@
 		</div>
 		<div class="tabsContent" layoutH="100">
 			<div>
-				<form method="post" action="/admin/config/update" class="pageForm required-validate" onsubmit="return iframeCallback(this)">
+				<form method="post" action="/admin/config/update" class="pageForm required-validate" onsubmit="return validateCallback(this,navTabAjaxDone)">
 					<div class="pageFormContent" layoutH="158">
 					<input name="key" value="<?php echo !empty($info['key'])?$info['key']:""?>" />
 					<input name="key_name" value="<?php echo !empty($info['key_name'])?$info['key_name']:""?>" />
@@ -39,11 +39,9 @@
 <?php echo $info['value']?>
 </textarea>
 			</div>
-			
 		</div>
 		<div class="tabsFooter">
 			<div class="tabsFooterContent"></div>
 		</div>
 	</div>
-
 </div>

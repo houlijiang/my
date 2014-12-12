@@ -1,139 +1,83 @@
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <meta charset="UTF-8">
-    <title>Basic CRUD Application - jQuery EasyUI CRUD Demo</title>
-    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/color.css">
-    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/demo/demo.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
-    <script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
-    </head>
-    <body>
-    <h2>Basic CRUD Application</h2>
-    <p>Click the buttons on datagrid toolbar to do crud actions.</p>
-    <table id="dg" title="My Users" class="easyui-datagrid" style="width:700px;height:250px"
-    url="get_users.php"
-    toolbar="#toolbar" pagination="true"
-    rownumbers="true" fitColumns="true" singleSelect="true">
-    <thead>
-    <tr>
-    <th field="firstname" width="50">First Name</th>
-    <th field="lastname" width="50">Last Name</th>
-    <th field="phone" width="50">Phone</th>
-    <th field="email" width="50">Email</th>
-    </tr>
-    </thead>
-    </table>
-    <div id="toolbar">
-    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">New User</a>
-    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Edit User</a>
-    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Remove User</a>
-    </div>
-    <div id="dlg" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
-    closed="true" buttons="#dlg-buttons">
-    <div class="ftitle">User Information</div>
-    <form id="fm" method="post" novalidate>
-    <div class="fitem">
-    <label>First Name:</label>
-    <input name="firstname" class="easyui-textbox" required="true">
-    </div>
-    <div class="fitem">
-    <label>Last Name:</label>
-    <input name="lastname" class="easyui-textbox" required="true">
-    </div>
-    <div class="fitem">
-    <label>Phone:</label>
-    <input name="phone" class="easyui-textbox">
-    </div>
-    <div class="fitem">
-    <label>Email:</label>
-    <input name="email" class="easyui-textbox" validType="email">
-    </div>
-    </form>
-    </div>
-    <div id="dlg-buttons">
-    <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">Save</a>
-    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">Cancel</a>
-    </div>
-    <script type="text/javascript">
-    var url;
-    function newUser(){
-    $('#dlg').dialog('open').dialog('setTitle','New User');
-    $('#fm').form('clear');
-    url = 'save_user.php';
-    }
-    function editUser(){
-    var row = $('#dg').datagrid('getSelected');
-    if (row){
-    $('#dlg').dialog('open').dialog('setTitle','Edit User');
-    $('#fm').form('load',row);
-    url = 'update_user.php?id='+row.id;
-    }
-    }
-    function saveUser(){
-    $('#fm').form('submit',{
-    url: url,
-    onSubmit: function(){
-    return $(this).form('validate');
-    },
-    success: function(result){
-    var result = eval('('+result+')');
-    if (result.errorMsg){
-    $.messager.show({
-    title: 'Error',
-    msg: result.errorMsg
-    });
-    } else {
-    $('#dlg').dialog('close'); // close the dialog
-    $('#dg').datagrid('reload'); // reload the user data
-    }
-    }
-    });
-    }
-    function destroyUser(){
-    var row = $('#dg').datagrid('getSelected');
-    if (row){
-    $.messager.confirm('Confirm','Are you sure you want to destroy this user?',function(r){
-    if (r){
-    $.post('destroy_user.php',{id:row.id},function(result){
-    if (result.success){
-    $('#dg').datagrid('reload'); // reload the user data
-    } else {
-    $.messager.show({ // show error message
-    title: 'Error',
-    msg: result.errorMsg
-    });
-    }
-    },'json');
-    }
-    });
-    }
-    }
-    </script>
-    <style type="text/css">
-    #fm{
-    margin:0;
-    padding:10px 30px;
-    }
-    .ftitle{
-    font-size:14px;
-    font-weight:bold;
-    padding:5px 0;
-    margin-bottom:10px;
-    border-bottom:1px solid #ccc;
-    }
-    .fitem{
-    margin-bottom:5px;
-    }
-    .fitem label{
-    display:inline-block;
-    width:80px;
-    }
-    .fitem input{
-    width:160px;
-    }
-    </style>
-    </body>
-    </html>
+<form id="pagerForm" method="post" action="/admin/goods/index">
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="<?php echo $page_size?>" />
+	
+</form>
+
+
+<div class="pageHeader">
+	<form onsubmit="return navTabSearch(this);" action="/admin/goods" method="post">
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					商品名称：<input type="text" name="keyword" />
+				</td>
+				<td>
+				<?php echo form_dropdown('cat_id',$cat_list, 0,'class="combox"')?>
+				</td>
+				<td>
+					建档日期：<input name="create_time" type="text" class="date" readonly="true" />
+				</td>
+			</tr>
+		</table>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+				<li><a class="button" href="demo_page6.html" target="dialog" mask="true" title="查询框"><span>高级检索</span></a></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="/admin/goods/add" target="navTab"><span>添加</span></a></li>
+			<li><a class="delete" href="/admin/goods/del/{sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li><a class="edit" href="/admin/goods/edit/{sid_user}" target="navTab"><span>修改</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+			<tr>
+				<th width="10%">编号</th>
+				<th width="20%">名称</th>
+				<th width="10%">分类</th>
+				<th width="10%">价格</th>
+				<th width="10%">创建日期</th>
+				<th width="20%">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php foreach ($list as $v):?>
+			<tr target="sid_user" rel="<?php echo $v['id']?>">
+				<td><?php echo $v['id']?></td>
+				<td><?php echo $v['goods_name']?></td>
+				<td><?php echo $v['cat_name']?></td>
+				<td><?php echo $v['goods_price']?></td>
+				<td><?php echo $v['create_time']?></td>
+				<td><?php echo anchor('/admin/goods/edit/'.$v['id'],'编辑','target="navTab"')?></td>
+			</tr>
+		<?php endforeach;?>
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<option value="10">10</option>
+				<option value="20">20</option>
+				<option value="50">50</option>
+				<option value="100">100</option>
+				<option value="200">200</option>
+			</select>
+			<span>条，共<?php echo $total?>条</span>
+		</div>
+		
+		<div class="pagination" targetType="navTab" totalCount="<?php echo $total?>" numPerPage="<?php echo $page_size?>" pageNumShown="10" currentPage="<?php echo $cur_page?>"></div>
+
+	</div>
+</div>

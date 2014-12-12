@@ -1,9 +1,19 @@
 <?php
-class user extends CI_Controller{
+class user extends MY_Controller{
+	public function __construct(){
+		parent::__construct();
+		$this->load->model("user_model");
+	}
 	public function index(){
 		$this->load->view("admin/home");
+		
 	}
 	public function login(){
+		$post = $this->input->post();
+		if(!empty($post)){
+			$this->user_model->check_login();
+			
+		}
 		$this->load->view("admin/login");
 	}
 	public function add(){
@@ -18,5 +28,6 @@ class user extends CI_Controller{
 	}
 	public function logout(){
 		$this->session->sess_destroy();
+		redirect('admin/user/login');
 	}
 }
