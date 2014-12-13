@@ -11,15 +11,15 @@ class MY_Controller extends CI_Controller{
 		}
 	}
 	
-	public function tojson($model){
+	public function tojson($model,$natabId=''){
 		$arr = array(
 			'statusCode'=>$model->statusCode,
 			'message'=>$model->message,
 		);
-		$arr['callbackType'] = 'closeCurrent';
+		$arr['callbackType'] = 'closeCurrent';//'closeCurrent';forward
 		$arr['forwardUrl'] = '';
 		$arr['rel'] = '';
-		$arr['navTabId'] = '';
+		$arr['navTabId'] = $natabId;
 		die(json_encode($arr,JSON_UNESCAPED_UNICODE));
 	}
 	

@@ -1,59 +1,58 @@
-<div class="con-lef" id="lefCon"  >
-		<!-- Begin - фСр╣пео╒ -->
+О╩©<div class="con-lef" id="lefCon"  >
+		<!-- Begin - Д╪│Д╦ Д©║Ф│╞ -->
 		<div class="det-info item" id="det_info"  >
-			<div class="h2-bg"><h2>фСр╣пео╒</h2></div>
+			<div class="h2-bg"><h2>Д╪│Д╦ Д©║Ф│╞</h2></div>
 		    <div class="lef-bd">
 		        <ul class="">
-		            <li class="comp"><h3><a href="http://www.china.cn/jiading/shanghaivision.html" class="f-bold blue-link">ио╨ёмЧя╥╩Зп╣а╛╫с╪Чспоч╧╚к╬</a></h3></li>
-		            <li class="link-btn"><span class="linker">ювл╚и╫</span><a href="http://shanghaivision.cn.china.cn/contact-information/" data-scode="30029">╡И©╢а╙о╣╥╫й╫</a></li>
+		            <li class="comp"><h3><a href="http://www.china.cn/jiading/shanghaivision.html" class="f-bold blue-link"><?php echo config_data('gs_name')?></a></h3></li>
 		            <li class="cut-dot"></li>
 		            <li>
 		                <dl>
-		                    <dt>╧╚к╬в╒╡А╣ьж╥ё╨</dt>
+		                    <dt>Е┘╛Е▐╦ФЁ╗Е├▄Е°╟Е²─О╪ </dt>
 		                    <dd></dd>
 		                </dl>
 		                <dl>
-		                    <dt>жВс╙╡Зф╥ё╨</dt>
+		                    <dt>Д╦╩Х░╔Д╨╖Е⌠│О╪ </dt>
 		                    <dd>
 		                        <em>
-		                            <a href="http://www.china.cn/goucaoguanjian/" target="_blank" data-scode="30031">╧╣╡ш╧э╪Ч</a>
+		                            <a href="http://www.china.cn/goucaoguanjian/" target="_blank" data-scode="30031">Ф╡÷Ф╖╫Г╝║Д╩╤</a>
 		                        </em>
 		                        <em>
-		                            <a href="http://www.china.cn/xiaofangpenlin/" target="_blank" data-scode="30031">оШ╥юеГаэ</a>
+		                            <a href="http://www.china.cn/xiaofangpenlin/" target="_blank" data-scode="30031">Ф╤┬И≤╡Е√╥Ф╥▀</a>
 		                        </em>
 		                        <em>
-		                            <a href="http://www.china.cn/search/BBF7CA97BCF3BCF5BC15AE87BCEDABF79B.html" target="_blank" data-scode="30031">©и©©╠╗╬╞╥╖цееГм╥</a>
+		                            <a href="http://www.china.cn/search/BBF7CA97BCF3BCF5BC15AE87BCEDABF79B.html" target="_blank" data-scode="30031">Е▐╞И²═Ф┼╔Х╜╕И≤─И≈╗Е√╥Е╓╢</a>
 		                        </em>
 		                    </dd>
 		                </dl>
 		            </li>
 		        </ul>
 				<div class="online-cont">
-				<a href="http://shanghaivision.cn.china.cn/contact-information/" class="contact-ways" title="а╙о╣╥╫й╫"></a> 
-				<a class="leave-words" target="_blank" href="http://my.cn.china.cn/manage.php?op=messageAnonPublish&corpid=1663952693&type=1" rel="nofollow" title="аТятя╞╪ш" data-cnrole="company" data-scode="30032"></a></div>
+				<a href="http://shanghaivision.cn.china.cn/contact-information/" class="contact-ways" title="Х│■ГЁ╩Ф√╧Е╪▐"></a> 
+				<a class="leave-words" target="_blank" href="http://my.cn.china.cn/manage.php?op=messageAnonPublish&corpid=1663952693&type=1" rel="nofollow" title="Г∙≥Х╗─Х╞╒Д╩╥" data-cnrole="company" data-scode="30032"></a></div>
 		    </div>
 		</div> 
-		<!-- End - фСр╣пео╒ -->
+		<!-- End - Д╪│Д╦ Д©║Ф│╞ -->
 		
-		<!--╧╘с╕пео╒╥жюЮ-->
+		<!--Д╬⌡Е╨■Д©║Ф│╞Е┬├Г╠╩-->
 		<div class="gyxx item" id="sell_cate"  >
 		    <div class="h2-bg">
-		        <h2>╧╘с╕пео╒╥жюЮ</h2>
+		        <h2>Д╬⌡Е╨■Д©║Ф│╞Е┬├Г╠╩</h2>
 		    </div>
 		    <div class="lef-bd" data-cnrole="overlist">
 		        <div class="assists ">
 		        <ul class="dot">
 		            <li  >
 		                <h4>
-		                    <a href="http://shanghaivision.cn.china.cn/supply/" rel="nofollow" title="х╚╡©" class="current" data-scode="30033">
-		                        х╚╡©<span>(1)</span>
+		                    <a href="http://shanghaivision.cn.china.cn/supply/" rel="nofollow" title="Е┘╗И┐╗" class="current" data-scode="30033">
+		                        Е┘╗И┐╗<span>(1)</span>
 		                    </a>
 		                </h4>
 		            </li>  
 		            <li  >
 		                <h4>
-		                    <a href="http://shanghaivision.cn.china.cn/supply/c967_1.html" rel="nofollow" title="у╒╥╖"  data-scode="30033">
-		                        у╒╥╖<span>(1)</span>
+		                    <a href="http://shanghaivision.cn.china.cn/supply/c967_1.html" rel="nofollow" title="И≈╦И≤─"  data-scode="30033">
+		                        И≈╦И≤─<span>(1)</span>
 		                    </a>
 		                </h4>
 		            </li>  
@@ -61,16 +60,16 @@
 		        </div>
 		    </div>
 		</div>
-		<!--а╙о╣╥╫й╫-->
+		<!--Х│■ГЁ╩Ф√╧Е╪▐-->
 		<div class="lxfs item" id="contact"  >
-		    <div class="h2-bg"><h2>а╙о╣╥╫й╫</h2></div>	
+		    <div class="h2-bg"><h2>Х│■ГЁ╩Ф√╧Е╪▐</h2></div>	
 		    <div class="lef-bd">
 		        <ul class="dot2">
-		            <li><dl><dt>а╙о╣хк:</dt><dd>ювл╚и╫</dd></dl></li>
-		            <li><dl><dt>╣Г ╩╟ :</dt><dd>021-59546836</dd></dl></li>
-		            <li><dl><dt>йж ╩З :</dt><dd>13371898516</dd></dl></li>
-		            <li><dl><dt>╢╚ уФ :</dt><dd>021-59546952</dd></dl></li>            
-		            <li><dl><dt>╣ь ж╥ :</dt><dd>ио╨ё ио╨ё ╪н╤╗ ио╨ёйп╪н╤╗╧╓р╣т╟</dd></dl></li>
+		            <li><dl><dt>Х│■ГЁ╩Д╨╨:</dt><dd><?php echo config_data('lx_lxr')?></dd></dl></li>
+		            <li><dl><dt>Г■╣ Х╞² :</dt><dd><?php echo config_data('lx_tel')?></dd></dl></li>
+		            <li><dl><dt>Ф┴▀ Ф°╨ :</dt><dd><?php echo config_data('lx_mobile')?></dd></dl></li>
+		            <li><dl><dt>Д╪═ Г°÷ :</dt><dd><?php echo config_data('lx_fax')?></dd></dl></li>            
+		            <li><dl><dt>Е°╟ Е²─ :</dt><dd><?php echo config_data('lx_address')?></dd></dl></li>
 		         </ul>
 		    </div>
 		</div> 

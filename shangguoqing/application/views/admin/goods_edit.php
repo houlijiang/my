@@ -1,3 +1,27 @@
+<style type="text/css">
+.fileInput input{
+    font-size:30px;
+    cursor:pointer;
+    filter:alpha(opacity=0);
+    opacity:0;
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:100;
+}
+.fileInput{
+	border:1px solid #ccc;
+	overflow:hidden;
+	position: relative;
+	max-height:100px;
+	max-width:100px;
+}
+.fileInput img{
+	position:relative;
+	z-index:1;
+	max-width:100%;
+}
+</style>
 <div class="pageContent">
 		<form method="post" action="/admin/goods/update" class="pageForm required-validate" onsubmit="return validateCallback(this,navTabAjaxDone)">
 			
@@ -8,7 +32,7 @@
 			</p>
 			<p>
 				<label>商品短标题：</label>
-				<input name="sub_title" class="required" type="text" size="30" value="<?php echo $info['sub_title']?>" alt="请输入商品短标题"/>
+				<input name="sub_title"  type="text" size="30" value="<?php echo $info['sub_title']?>" alt="请输入商品短标题"/>
 			</p>
 			<p>
 				<label>商品分类：</label>
@@ -22,8 +46,21 @@
 				<label>当前价：</label>
 				<input name="goods_price" class="number" type="text" size="30" alt="请输入数字" value="<?php echo $info['goods_price']?>"/>
 			</p>
+			<p>
+				<label>跳转地址：</label>
+				<input name="url" class="url" type="text" size="30" alt="网址" value="<?php echo $info['url']?>"/>
+			</p>
+			<p style="height:auto;">
+				<label>缩略图：</label>
+				<input id="goods_thmub" type="file" name="goods_thumb" value="<?php echo $info['goods_thumb']?>"/>
+			</p>
+			<p style="height:auto;">
+				<label>大图：</label>
+				<input id="goods_image" type="file" name="goods_image" value="<?php echo $info['goods_image']?>" />
+			</p>
 				<div class="unit">
-					<textarea class="editor" name="description" rows="6" cols="100"><?php echo $info['goods_desc']?></textarea>
+				<label>描述：</label>
+					<textarea class="editor" name="goods_desc" rows="6" cols="100"><?php echo $info['goods_desc']?></textarea>
 					<input type="hidden" name="id" value="<?php echo $info['id']?>">
 				</div>
 			</div>
@@ -35,3 +72,10 @@
 			</div>
 		</form>
 </div>
+<script>
+$(function(){
+	$("#goods_thmub").upload({img:"<?php echo $info['goods_thumb']?>"});
+	$("#goods_image").upload({img:"<?php echo $info['goods_image']?>"});
+});
+
+</script>

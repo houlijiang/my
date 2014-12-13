@@ -9,17 +9,15 @@ class config extends MY_Controller{
 		$this->load->view("admin/config_list",$data);
 	}
 	public function edit($id=0){
-		$id = intval($id);
-		$sql = "select * from config where id=$id";
-		$data['info'] = $this->data->getRow($sql);
+		$data['info'] = $this->config_model->get_info('config',$id);
 		$this->load->view("admin/config_edit",$data);
 	}
 	public function add(){
-		$data['info'] = array('id'=>0,'key'=>'','value'=>'','key_name'=>'');
-		$this->load->view("admin/config_edit",$data);
+		$this->edit(0);
 	}
 	public function update(){
-		$this->config_model->update();
+		$this->config_model->update('config');
+		$this->tojson($this->config_model,'config');
 		
 	}
 }

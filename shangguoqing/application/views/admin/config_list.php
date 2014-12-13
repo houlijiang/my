@@ -40,9 +40,9 @@
 <div class="pageContent">
 	<div class="panelBar">
 		<ul class="toolBar">
-			<li><a class="add" href="/admin/config/add" target="navTab"><span>添加</span></a></li>
+			<li><a class="add" href="/admin/config/add" target="navTab" rel="edit"><span>添加</span></a></li>
 			<li><a class="delete" href="/admin/config/del/{sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
-			<li><a class="edit" href="/admin/config/edit/{sid_user}" target="navTab"><span>修改</span></a></li>
+			<li><a class="edit" href="/admin/config/edit/{sid_user}" target="navTab"  rel="edit"><span>修改</span></a></li>
 			<li class="line">line</li>
 			<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
 		</ul>
@@ -60,11 +60,12 @@
 		<tbody>
 		<?php foreach ($list as $v):?>
 			<tr target="sid_user" rel="<?php echo $v['id']?>">
-				<td><?php echo $v['key']?></td>
+				<td><?php echo $v['config_key']?></td>
 				<td><?php echo $v['key_name']?></td>
-				<td><?php echo $v['value']?></td>
+				<td><?php echo $v['config_value']?></td>
 				<td><?php echo $v['create_time']?></td>
-				<td><?php echo anchor('/admin/config/edit/'.$v['id'],'编辑','target="navTab"')?></td>
+				<td><a target="navTab" rel="edit" class="button" href="<?php echo '/admin/config/edit/'.$v['id']?>" ><span>编辑</span></a>
+				</td>
 			</tr>
 		<?php endforeach;?>
 		</tbody>

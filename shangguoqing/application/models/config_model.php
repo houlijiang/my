@@ -9,24 +9,14 @@ class config_model extends MY_Model{
 		$post['list'] = $this->data->getAll($sql);
 		return $post;
 	}
-	public function update(){
-		$post = $this->input->post();
-		if($post['id']>0){
-			$udata = array(
-			'key'=>$post['key'],
-			'value'=>$post['value'],
-			'key_name'=>$post['key_name']
-			);
-			$this->data->update('config',$udata,array('id'=>$post['id']));
-		}else{
-			$udata = array(
-			'key'=>$post['key'],
-			'value'=>$post['value'],
-			'create_time'=>date('Y-m-d H:i:s'),
-			'key_name'=>$post['kay_name']
-			);
-			$this->data->insert('config',$udata);
+	
+	public function config_data($key=''){
+		if(empty($key)) return '';
+		$data = array();
+		$sql = "select config_key,config_value from config where is_delete=0";
+		foreach($this->data->getAll($sql) as $v){
+			$data[$v['config_key']] = $v['config_value'];
 		}
-		tojson(200,'操作成功',0);
+		return isset($data[$key])?$data[$key]:'';
 	}
 }

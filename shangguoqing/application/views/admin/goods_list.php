@@ -33,7 +33,7 @@
 <div class="pageContent">
 	<div class="panelBar">
 		<ul class="toolBar">
-			<li><a class="add" href="/admin/goods/add" target="navTab"><span>添加</span></a></li>
+			<li><a class="add" href="/admin/goods/add" target="navTab" rel="edit"><span>添加</span></a></li>
 			<li><a class="delete" href="/admin/goods/del/{sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
 			<li><a class="edit" href="/admin/goods/edit/{sid_user}" target="navTab"><span>修改</span></a></li>
 			<li class="line">line</li>
@@ -59,7 +59,7 @@
 				<td><?php echo $v['cat_name']?></td>
 				<td><?php echo $v['goods_price']?></td>
 				<td><?php echo $v['create_time']?></td>
-				<td><?php echo anchor('/admin/goods/edit/'.$v['id'],'编辑','target="navTab"')?></td>
+				<td><?php echo anchor('/admin/goods/edit/'.$v['id'],'编辑','target="navTab" rel="edit"')?></td>
 			</tr>
 		<?php endforeach;?>
 		</tbody>

@@ -1,4 +1,4 @@
-<?php $this->load->view("page_header");?>
+ï»¿<?php $this->load->view("page_header");?>
 <div class="content-wrapper">
 <div class="bd">
 	<div class="content fl-clr">
@@ -6,24 +6,24 @@
 		<div class="fill">
 			<div class="con-rig" id="rigCon"  >
 		<div class="company-intro item" id="enterprise_intro">
-		    <div class="h2-bg section"><span class="sh1">¹«Ë¾¼ò½é</span><a href="#" rel="nofollow" class="more" data-scode="30102">¸ü¶à<span class="gt">&gt;</span></a></div>
+		    <div class="h2-bg section"><span class="sh1">å…¬å¸ç®€ä»‹</span><a href="#" rel="nofollow" class="more" data-scode="30102">æ›´å¤š<span class="gt">&gt;</span></a></div>
 		    <div class="rig-bd fl-clr">
-		       <div class="company-info"><p>×ö¹ý¹µ²Û¹Ü¼þµÄÈË¶¼ÖªµÀÍþÑ·Æ·ÅÆ¡£ÉÏº£ÈðæÚ£¬ÃÀ¹úÎ¬ÌØÀû£¬ÎÒÃÇÈý¼ÒÔÚ¹µ²Û¹Ü¼þÉÏ¾ºÕù×î´ó£¬É½¶«µÄ¡¢ºÓ±±µÄ×ö¹µ²Û¹Ø¼üµÄÒ²¶à£¬ÎÒÏëËµµÄÊÇ£¬Æ·ÖÊºÍ·þÎñÊ±ÎÒÃÇµÄÓÅÊÆ¡£</p></div>
+		       <div class="company-info"><p><?php echo config_data('gs_jj')?></p></div>
 		    </div>
 		</div> <!-- company-intro end -->										 
 		<div class="new-supply item" id="new_sup">
-		    <div class="h2-bg section"><h2>×îÐÂ¹©Ó¦</h2></div>
+		    <div class="h2-bg section"><h2>æœ€æ–°ä¾›åº”</h2></div>
 		    <div class="rig-bd fl-clr">
 	           <ul class="pro-sup fl-clr">
 	             <li>
 		                <dl class="wrap-product">
 		                    <dt class="vertical-img">
-		                        <a href="#" title="¹©Ó¦¿ìËÙ½ÓÍ·¡¢¹µ²Û¹Ü¼þ" rel="nofollow" data-scode="30103">
-		                            <img src="http://my.cn.china.cn/image/no_pic.gif" alt="¹©Ó¦¿ìËÙ½ÓÍ·¡¢¹µ²Û¹Ü¼þ" width="100">
+		                        <a href="#" title="ä¾›åº”å¿«é€ŸæŽ¥å¤´ã€æ²Ÿæ§½ç®¡ä»¶" rel="nofollow" data-scode="30103">
+		                            <img src="http://my.cn.china.cn/image/no_pic.gif" alt="ä¾›åº”å¿«é€ŸæŽ¥å¤´ã€æ²Ÿæ§½ç®¡ä»¶" width="100">
 		                        </a>
 		                    </dt>
 		                    <dd class="desc">
-		                        <a href="#" title="¹©Ó¦¿ìËÙ½ÓÍ·¡¢¹µ²Û¹Ü¼þ" data-scode="30103">¹©Ó¦¿ìËÙ½ÓÍ·¡¢¹µ²Û¹Ü¼þ </a>
+		                        <a href="#" title="ä¾›åº”å¿«é€ŸæŽ¥å¤´ã€æ²Ÿæ§½ç®¡ä»¶" data-scode="30103">ä¾›åº”å¿«é€ŸæŽ¥å¤´ã€æ²Ÿæ§½ç®¡ä»¶ </a>
 		                    </dd>
 		                </dl>
 	            </li>

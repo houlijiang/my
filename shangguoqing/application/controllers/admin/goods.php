@@ -12,7 +12,7 @@ class goods extends MY_Controller{
 	}
 	public function update(){
 		$this->goods_model->update('goods');
-		$this->tojson($this->goods_model);
+		$this->tojson($this->goods_model,'goods');
 	}
 	public function edit($id){
 		$data['info'] = $this->goods_model->get_info('goods',$id);
