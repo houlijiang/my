@@ -1,5 +1,6 @@
 <?php
-class goods_model extends MY_Model{
+class article_model extends MY_Model{
+	public $state = array('编辑中','上架','下架');
 	public function get_list(){
 		$post = $this->input->post();
 		$where = "where a.is_delete=0";
@@ -18,7 +19,7 @@ class goods_model extends MY_Model{
 		if(!empty($post['keyword'])){
 			$where .= " and goods_name like '%{$post['keyword']}%'";
 		}
-		$sql = "select a.*,b.cat_name,c.user_name from goods a left join category b on a.cat_id=b.id left join admin_user c on a.admin_id=c.id $where";
+		$sql = "select a.*,b.cat_name,c.user_name from article a left join category b on a.cat_id=b.id left join admin_user c on a.admin_id=c.id $where";
 		$post['total'] = $this->data->getNums($sql);
 		$this->page($post);
 		$sql .=" order by a.id desc limit {$post['limit']},{$post['page_size']}";

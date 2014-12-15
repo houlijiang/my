@@ -22,7 +22,7 @@
 <script src="/dwz/js/jquery.bgiframe.js" type="text/javascript"></script>
 <script src="/dwz/xheditor/xheditor-1.2.1.min.js" type="text/javascript"></script>
 <script src="/dwz/xheditor/xheditor_lang/zh-cn.js" type="text/javascript"></script>
-<script src="/dwz/uploadify/scripts/jquery.uploadify.js" type="text/javascript"></script>
+
 <script src="/dwz/js/dwz.min.js" type="text/javascript"></script>
 <script src="/dwz/js/dwz.regional.zh.js" type="text/javascript"></script>
 <script src="/js/upload.js" type="text/javascript"></script>
@@ -48,7 +48,7 @@ $(function(){
 	<div id="layout">
 		<div id="header">
 			<div class="headerNav">
-				<a class="logo" href="http://j-ui.com">标志</a>
+				<a class="logo" href="#">标志</a>
 				<ul class="nav">
 					<li id="switchEnvBox"><a href="javascript:">（<span>北京</span>）切换城市</a>
 						<ul>
@@ -102,7 +102,7 @@ $(function(){
 									<li><a href="/admin/home/main" target="navTab" rel="main">我的主页</a></li>
 									<li><a href="/admin/config" target="navTab" rel="config">站点配置</a></li>
 									<li><a href="/admin/goods" target="navTab" rel="goods">商品管理</a></li>
-									<li><a href="/dwz/demo_page1.html" target="navTab" rel="page1" fresh="false">替换页面一</a></li>
+									<li><a href="/admin/article" target="navTab" rel="article">文章管理</a></li>
 									<li><a href="/dwz/demo_page2.html" target="navTab" rel="page2">页面二</a></li>
 									<li><a href="/dwz/demo_page4.html" target="navTab" rel="page3" title="页面三（自定义标签名）">页面三</a></li>
 									<li><a href="/dwz/demo_page4.html" target="navTab" rel="page4" fresh="false">测试页面（fresh="false"）</a></li>

@@ -26,8 +26,8 @@
 	
 	<input id="testFileInput" type="file" name="image" 
 		uploaderOption="{
-			swf:'uploadify/scripts/uploadify.swf',
-			uploader:'demo/common/ajaxDone.html',
+			swf:'/dwz/uploadify/scripts/uploadify.swf',
+			uploader:'/dwz/demo/common/ajaxDone.html',
 			formData:{PHPSESSID:'xxx', ajax:1},
 			buttonText:'请选择文件',
 			fileSizeLimit:'200KB',
@@ -44,11 +44,11 @@
 
 	<input id="testFileInput2" type="file" name="image2" 
 		uploaderOption="{
-			swf:'uploadify/scripts/uploadify.swf',
-			uploader:'demo/common/ajaxDone.html',
+			swf:'/dwz/uploadify/scripts/uploadify.swf',
+			uploader:'/dwz/demo/common/ajaxDone.html',
 			formData:{PHPSESSID:'xxx', ajax:1},
 			queueID:'fileQueue',
-			buttonImage:'uploadify/img/add.jpg',
+			buttonImage:'/dwz/uploadify/img/add.jpg',
 			buttonClass:'my-uploadify-button',
 			width:102,
 			auto:false
@@ -57,8 +57,8 @@
 	
 	<div id="fileQueue" class="fileQueue"></div>
 	
-	<input type="image" src="uploadify/img/upload.jpg" onclick="$('#testFileInput2').uploadify('upload', '*');"/>
-	<input type="image" src="uploadify/img/cancel.jpg" onclick="$('#testFileInput2').uploadify('cancel', '*');"/>
+	<input type="image" src="/dwz/uploadify/img/upload.jpg" onclick="$('#testFileInput2').uploadify('upload', '*');"/>
+	<input type="image" src="/dwz/uploadify/img/cancel.jpg" onclick="$('#testFileInput2').uploadify('cancel', '*');"/>
 
 
 	<div class="divider"></div>

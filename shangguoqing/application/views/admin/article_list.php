@@ -1,4 +1,4 @@
-<form id="pagerForm" method="post" action="/admin/goods/index">
+<form id="pagerForm" method="post" action="/admin/<?php echo $this->uri->segment(2)?>/index">
 	<input type="hidden" name="pageNum" value="1" />
 	<input type="hidden" name="numPerPage" value="<?php echo $page_size?>" />
 	
@@ -6,18 +6,18 @@
 
 
 <div class="pageHeader">
-	<form onsubmit="return navTabSearch(this);" action="/admin/goods" method="post">
+	<form onsubmit="return navTabSearch(this);" action="/admin/<?php echo $this->uri->segment(2)?>" method="post">
 	<div class="searchBar">
 		<table class="searchContent">
 			<tr>
 				<td>
-					商品名称：<input type="text" name="keyword" value="<?php echo isset($keyword)?$keyword:''?>" />
+					标题：<input type="text" name="keyword" value="<?php echo isset($keyword)?$keyword:''?>" />
 				</td>
 				<td>
 				<?php echo form_dropdown('cat_id',$cat_list, isset($cat_id)?$cat_id:0,'class="combox"')?>
 				</td>
 				<td>
-				<?php echo form_dropdown('state',array(-1=>'状态',0=>'下架',1=>'上架'), isset($state)?$state:-1,'class="combox"')?>
+				<?php echo form_dropdown('state',array(-1=>'状态',0=>'编辑中',1=>'上架','下架'), isset($state)?$state:-1,'class="combox"')?>
 				</td>
 				<td>
 					发布时间：<input name="start_time" type="text" class="date" readonly="true" value="<?php echo isset($start_time)?$start_time:''?>" /> - <input name="end_time" type="text" class="date" readonly="true" value="<?php echo isset($end_time)?$end_time:''?>"/>
@@ -36,9 +36,9 @@
 <div class="pageContent">
 	<div class="panelBar">
 		<ul class="toolBar">
-			<li><a class="add" href="/admin/goods/add" target="navTab" rel="edit"><span>添加</span></a></li>
-			<li><a class="delete" href="/admin/goods/del/{sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
-			<li><a class="edit" href="/admin/goods/edit/{sid_user}" target="navTab"><span>修改</span></a></li>
+			<li><a class="add" href="<?php echo base_url('admin/'.$this->uri->segment(2).'/add')?>" target="navTab" rel="edit"><span>添加</span></a></li>
+			<li><a class="delete" href="<?php echo base_url('admin/'.$this->uri->segment(2).'/del')?>/{sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li><a class="edit" href="<?php echo base_url('admin/'.$this->uri->segment(2).'/edit')?>/{sid_user}" target="navTab"><span>修改</span></a></li>
 			<li class="line">line</li>
 			<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
 		</ul>
@@ -48,7 +48,6 @@
 			<tr>
 				<th width="10%">编号</th>
 				<th width="20%">名称</th>
-				<th width="10%">价格</th>
 				<th width="10%">分类</th>
 				<th width="10%">状态</th>
 				<th width="10%">发布人</th>
@@ -60,13 +59,12 @@
 		<?php foreach ($list as $v):?>
 			<tr target="sid_user" rel="<?php echo $v['id']?>">
 				<td><?php echo $v['id']?></td>
-				<td><?php echo $v['goods_name']?></td>
-				<td><?php echo $v['goods_price']?></td>
+				<td><?php echo $v['title']?></td>
 				<td><?php echo $v['cat_name']?></td>
-				<td><?php echo $v['state']>0?'上架':'下架'?></td>
+				<td><?php echo $this->article_model->state[$v['state']]?></td>
 				<td><?php echo $v['user_name']?></td>
 				<td><?php echo $v['create_time']?></td>
-				<td><?php echo anchor('/admin/goods/edit/'.$v['id'],'编辑','target="navTab" rel="edit"')?></td>
+				<td><?php echo anchor('/admin/article/edit/'.$v['id'],'编辑','target="navTab" rel="edit"')?></td>
 			</tr>
 		<?php endforeach;?>
 		</tbody>

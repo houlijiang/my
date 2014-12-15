@@ -10,10 +10,14 @@ class category_model extends MY_Model{
 		return $post;
 	}
 	
-	public function data_list(){
-		$sql = "select id,cat_name from category where is_delete=0";
+	public function data_list($parent_id=0){
+		$where = " where is_delete=0";
+		if($parent_id>0){
+			$where .=" and parent_id=$parent_id";
+		}
+		$sql = "select id,cat_name from category $where";
 		$data = $this->data->getAll($sql);
-		$list = array();
+		$list[0] = '选择分类';
 		foreach ($data as $v){
 			$list[$v['id']] = $v['cat_name'];
 		}

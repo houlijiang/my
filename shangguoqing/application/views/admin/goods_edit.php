@@ -27,6 +27,10 @@
 			
 			<div class="pageFormContent" layoutH="56">
 			<p>
+				<label>商品分类：</label>
+				<?php echo form_dropdown('cat_id',$cat_list, $info['cat_id'],'class="combox"')?>
+			</p>
+			<p>
 				<label>商品名称：</label>
 				<input name="goods_name" class="required" type="text" size="30" value="<?php echo $info['goods_name']?>" alt="请输入商品名称"/>
 			</p>
@@ -35,22 +39,26 @@
 				<input name="sub_title"  type="text" size="30" value="<?php echo $info['sub_title']?>" alt="请输入商品短标题"/>
 			</p>
 			<p>
-				<label>商品分类：</label>
-				<?php echo form_dropdown('cat_id',$cat_list, $info['cat_id'],'class="combox"')?>
+				<label>商品状态：</label>
+				<?php echo form_dropdown('state',array('下架','上架'), $info['state'],'class="combox"')?>
 			</p>
 			<p>
-				<label>市场价：</label>
+				<label>市场价格：</label>
 				<input name="market_price" class="number" type="text" size="30" alt="请输入数字" value="<?php echo $info['market_price']?>"/>
 			</p>
 			<p>
-				<label>当前价：</label>
+				<label>商品售价：</label>
 				<input name="goods_price" class="number" type="text" size="30" alt="请输入数字" value="<?php echo $info['goods_price']?>"/>
 			</p>
 			<p>
-				<label>跳转地址：</label>
+				<label>商品销量：</label>
+				<input name="goods_price" class="number" type="text" size="30" alt="请输入数字" value="<?php echo $info['sale_number']?>"/>
+			</p>
+			<p>
+				<label>商品链接：</label>
 				<input name="url" class="url" type="text" size="30" alt="网址" value="<?php echo $info['url']?>"/>
 			</p>
-			<p style="height:auto;">
+			<p style="height:auto;clear:both;">
 				<label>缩略图：</label>
 				<input id="goods_thmub" type="file" name="goods_thumb" value="<?php echo $info['goods_thumb']?>"/>
 			</p>
