@@ -25,7 +25,7 @@
 					data: fd,
 					dataType:"json",
 					success: function(d) {
-						var v = '/images/upload/'+d.result.file_name;
+						var v = d.result.file_name;
 						me.parent().find('img').attr('src',v);
 						me.parent().find('input').eq(1).val(v);
 						

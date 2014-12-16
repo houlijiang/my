@@ -103,7 +103,7 @@ $(function(){
 									<li><a href="/admin/config" target="navTab" rel="config">站点配置</a></li>
 									<li><a href="/admin/goods" target="navTab" rel="goods">商品管理</a></li>
 									<li><a href="/admin/article" target="navTab" rel="article">文章管理</a></li>
-									<li><a href="/dwz/demo_page2.html" target="navTab" rel="page2">页面二</a></li>
+									<li><a href="/admin/advert" target="navTab" rel="advert">广告管理</a></li>
 									<li><a href="/dwz/demo_page4.html" target="navTab" rel="page3" title="页面三（自定义标签名）">页面三</a></li>
 									<li><a href="/dwz/demo_page4.html" target="navTab" rel="page4" fresh="false">测试页面（fresh="false"）</a></li>
 									<li><a href="/dwz/w_editor.html" target="navTab">表单提交会话超时</a></li>

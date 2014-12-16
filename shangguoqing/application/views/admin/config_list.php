@@ -64,7 +64,7 @@
 				<td><?php echo $v['key_name']?></td>
 				<td><?php echo $v['config_value']?></td>
 				<td><?php echo $v['create_time']?></td>
-				<td><a target="navTab" rel="edit" class="button" href="<?php echo '/admin/config/edit/'.$v['id']?>" ><span>编辑</span></a>
+				<td><a target="navTab" rel="edit" class="btnEdit" href="<?php echo '/admin/config/edit/'.$v['id']?>" >编辑</a>
 				</td>
 			</tr>
 		<?php endforeach;?>
@@ -73,13 +73,7 @@
 	<div class="panelBar">
 		<div class="pages">
 			<span>显示</span>
-			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
-				<option value="10">10</option>
-				<option value="20">20</option>
-				<option value="50">50</option>
-				<option value="100">100</option>
-				<option value="200">200</option>
-			</select>
+			<?php echo form_dropdown('numPerPage',array(10=>10,20=>20,50=>50,100=>100,200=>200), $page_size,'class="combox" onchange="navTabPageBreak({numPerPage:this.value})"')?>
 			<span>条，共<?php echo $total?>条</span>
 		</div>
 		
