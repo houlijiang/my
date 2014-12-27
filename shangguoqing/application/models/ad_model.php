@@ -6,7 +6,7 @@ class ad_model extends MY_model{
 	 * 广告位列表
 	 * */
 	public function position_list(){
-		$sql = "select * from ad_position where is_delete=0 and is_show=1";
+		$sql = "select * from cms_ad_position where is_delete=0 and is_show=1";
 		$res = $this->data->getAll($sql);
 		$list = array();
 		foreach ($res as $v){
@@ -36,7 +36,7 @@ class ad_model extends MY_model{
 		if(!empty($post['keyword'])){
 			$where .= " and ad_name like '%{$post['keyword']}%'";
 		}
-		$sql = "select a.*,b.position_name,c.user_name from ad a left join ad_position b on a.position_id=b.id left join admin_user c on a.admin_id=c.id $where";
+		$sql = "select a.*,b.position_name,c.user_name from cms_ad a left join cms_ad_position b on a.position_id=b.id left join cms_admin_user c on a.admin_id=c.id $where";
 		$post['total'] = $this->data->getNums($sql);
 		$this->page($post);
 		$sql .=" order by a.id desc limit {$post['limit']},{$post['page_size']}";

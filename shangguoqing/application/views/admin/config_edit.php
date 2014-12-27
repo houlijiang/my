@@ -1,5 +1,5 @@
 <div class="pageContent">
-				<form method="post" action="/admin/config/update" class="pageForm required-validate" onsubmit="return validateCallback(this,dialogAjaxDone)">
+				<form method="post" action="/admin/config/update" class="pageForm required-validate" onsubmit="return validateCallback(this,navTabAjaxDone)">
 					<div class="pageFormContent" layoutH="56">
 					<input name="config_key" value="<?php echo !empty($info['config_key'])?$info['config_key']:""?>" />
 					<input name="key_name" value="<?php echo !empty($info['key_name'])?$info['key_name']:""?>" />

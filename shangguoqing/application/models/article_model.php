@@ -19,7 +19,7 @@ class article_model extends MY_Model{
 		if(!empty($post['keyword'])){
 			$where .= " and goods_name like '%{$post['keyword']}%'";
 		}
-		$sql = "select a.*,b.cat_name,c.user_name from article a left join category b on a.cat_id=b.id left join admin_user c on a.admin_id=c.id $where";
+		$sql = "select a.*,b.cat_name,c.user_name from cms_article a left join cms_category b on a.cat_id=b.id left join cms_admin_user c on a.admin_id=c.id $where";
 		$post['total'] = $this->data->getNums($sql);
 		$this->page($post);
 		$sql .=" order by a.id desc limit {$post['limit']},{$post['page_size']}";

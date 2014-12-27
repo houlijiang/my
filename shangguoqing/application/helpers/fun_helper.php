@@ -1,21 +1,19 @@
 <?php
-function tojson($code=100,$message='',$type=0,$type_ext='',$type_ext1=''){
+function tojson($statusCode=200,$message='操作成功',$navTabId='',$rel='',$forwardUrl=''){
 	$arr = array(
-		'statusCode'=>$code,
+		'statusCode'=>$statusCode,
 		'message'=>$message,
+		'rel'=>$rel,
+		'navTabId'=>$navTabId,
+		'callbackType'=>!empty($forwardUrl)?'forward':'closeCurrent',
 	);
-	if($type>0){
-		$arr['callbackType'] = 'forward';
-		$arr['forwardUrl'] = $type_ext;
-		$arr['rel'] = $type_ext1;
-	}else{
-		$arr['callbackType'] = 'closeCurrent';
-		$arr['navTabId'] = $type_ext;
+	if(!empty($forwardUrl)){
+		$arr['forwardUrl'] = $forwardUrl;
 	}
 	die(json_encode($arr,JSON_UNESCAPED_UNICODE));
 }
 function config_data($key){
-$ci = &get_instance();
-$ci->load->model('config_model');
-return $ci->config_model->config_data($key);
+	$ci = &get_instance();
+	$ci->load->model('config_model');
+	return $ci->config_model->config_data($key);
 }

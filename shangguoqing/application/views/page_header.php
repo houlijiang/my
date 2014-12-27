@@ -60,12 +60,12 @@
 <div class="wrap-bg-left" id="nav">
 	   <div class="wrap-bg-right">
 		  <ul class="mian-nav fl-clr">
-			  <li><a href="http://shanghaivision.cn.china.cn" class="selected" data-scode="30017">企业首页</a></li>
-			  <li id="sup_infor"><a href="http://shanghaivision.cn.china.cn/supply/"   data-scode="30018">供应信息</a></li>
+			  <li><a href="/" <?php echo empty($this->uri->segment(1))?'class="selected"':''?> data-scode="30017">企业首页</a></li>
+			  <li id="sup_infor"><a href="/supply"   data-scode="30018" <?php echo $this->uri->segment(1)=='supply'?'class="selected"':''?>>供应信息</a></li>
               <li id="company_intro"><a href="http://shanghaivision.cn.china.cn/company-information.html"   rel="nofollow" data-scode="30020">企业介绍</a></li>
               <li id="certificate"><a href="http://shanghaivision.cn.china.cn/certificates.html"   rel="nofollow" data-scode="30021">企业资质</a></li>
               <li id="album"><a href="http://shanghaivision.cn.china.cn/photo-album.html"   rel="nofollow" data-scode="30026">企业相册</a></li>
-              <li id="nav_links"><a href="http://shanghaivision.cn.china.cn/contact-information/"   rel="nofollow" data-scode="30022">联系方式</a></li>
+              <li id="nav_links"><a href="/contact"  <?php echo $this->uri->segment(1)=='contact'?'class="selected"':''?>  rel="nofollow" data-scode="30022">联系方式</a></li>
 		  </ul>
 	  </div>
 </div> 

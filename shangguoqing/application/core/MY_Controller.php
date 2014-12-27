@@ -2,11 +2,12 @@
 class MY_Controller extends CI_Controller{
 	public $table_name;
 	public $class;
+	public $model='';
 	public $statusCode = 200;
 	public $message = '操作成功';
 	public $list_fields=array();
-	public $natabId;
-	public $callbackType = 0;
+	public $natabId = '';
+	public $callbackType = 'closeCurrent';
 	public $rel = '';
 	public $forwardUrl = '';
 	public function __construct(){
@@ -19,21 +20,35 @@ class MY_Controller extends CI_Controller{
 			exit;
 		}
 		$this->load->library('data');
+		
 	}
-	
-	public function tojson(){
-		$arr = array(
-			'statusCode'=>$this->statusCode,
-			'message'=>$this->message,
-		);
-		$arr['callbackType'] = $this->callbackType>0?'forward':'closeCurrent';
-		$arr['forwardUrl'] = $this->forwardUrl;
-		$arr['rel'] = $this->rel;
-		$arr['navTabId'] = $this->natabId;
-		die(json_encode($arr,JSON_UNESCAPED_UNICODE));
+	public function index(){
+		if(empty($this->model)){
+			$this->load->model($this->class.'_model','m');
+		}else{
+			$this->load->model($this->model,'m');
+		}
+		$data = $this->m->get_list();
+		$fun = get_class_methods($this->class);
+		if(in_array('_index', $fun)){
+			$this->_index($data);
+		}
+		$this->load->view('admin/'.$this->class.'_list',$data);
 	}
-	
+	public function add(){
+		$this->edit(0);
+	}
+	public function edit($id=0){
+		$data['info'] = $this->get_info($id);
+		$fun = get_class_methods($this->class);
+		if(in_array('_edit', $fun)){
+			$this->_edit($data);
+		}
+		$this->load->view('admin/'.$this->class.'_edit',$data);
+	}
 	public function update(){
+		$this->natabId = $this->class;
+		$this->rel = $this->class;
 		$id = $this->input->post('id');
 		$temp = $post = $this->input->post();
 		
@@ -61,11 +76,7 @@ class MY_Controller extends CI_Controller{
 				$this->_insert($post);
 			}
 			if(in_array("create_time", $this->get_fields())){
-				if($this->get_field_type("create_time")=='int' or $this->get_field_type("create_time")=='bigint'){
-					$post['create_time'] = time();
-				}else{
-					$post['create_time'] = date("Y-m-d H:i:s");
-				}
+				$post['create_time'] = date("Y-m-d H:i:s");
 			}
 			$otype = 3;
 			$res = $this->data->insert($this->table_name,$post);
@@ -74,13 +85,15 @@ class MY_Controller extends CI_Controller{
 				$this->insert_($temp);
 			}
 		}
-		$this->tojson();
+		tojson($this->statusCode,$this->message,$this->natabId,$this->rel,$this->forwardUrl);
 	//	$this->operation_log($otype, $temp); //记录操作日志
-		//tojson($res?1:0,$this->err_code,$this->err_msg);
 	}
 	
 	//删除
     function del($id){
+    	$this->natabId = $this->class;
+		$this->rel = $this->class;
+		$this->forwardUrl = "/admin/".$this->class;
     	$fun = get_class_methods($this->class);
     	if(in_array('_before_del', $fun)){
 			$this->_before_del($id);
@@ -96,8 +109,7 @@ class MY_Controller extends CI_Controller{
 			$this->statusCode = 300;
 			$this->message = "删除失败!";
 		}
-	//	$this->operation_log(4, $id); //记录操作日志
-		$this->tojson();
+		tojson($this->statusCode,$this->message,$this->natabId,$this->rel,$this->forwardUrl);
     }
     //还愿
     public function restore($id=0){

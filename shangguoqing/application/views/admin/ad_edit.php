@@ -44,11 +44,11 @@
 			</p>
 			<p>
 				<label>开始时间：</label>
-				<input name="start_time" type="text" class="date" readonly="true" value="<?php echo $info['start_time']?>" /> 
+				<input name="start_time" type="text" class="date" readonly="true" datefmt="yyyy-MM-dd HH:mm:ss" value="<?php echo $info['start_time']?>" /> 
 			</p>
 			<p>
 				<label>结束时间：</label>
-				<input name="end_time" type="text" class="date" readonly="true" value="<?php echo $info['end_time']?>"/>
+				<input name="end_time" type="text" class="date" readonly="true" datefmt="yyyy-MM-dd HH:mm:ss" value="<?php echo $info['end_time']?>"/>
 			</p>
 			<p style="height:auto;clear:both;">
 				<label>缩略图：</label>

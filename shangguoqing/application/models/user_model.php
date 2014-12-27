@@ -12,7 +12,7 @@ class user_model extends MY_Model{
 			tojson(300,'密码不能为空');
 		}
 		$password = md5($password);
-		$sql = "select * from admin_user where user_name='$user_name' and password='$password'";
+		$sql = "select * from cms_admin_user where user_name='$user_name' and password='$password'";
 		$row = $this->data->getRow($sql);
 		if(empty($row)){
 			tojson(300,'密码有误');

@@ -1,12 +1,15 @@
 <?php
 class upload extends MY_Controller{
+	public $path = './images/upload/';
+	public function __construct(){
+		parent::__construct();
+	}
 	public function index(){
 		$this->load->view('admin/upload');
+		
 	}
 	public function do_upload(){
-		  $path = '/images/upload/'.date("Ym").'/'.date('d').'/';
-		  $this->mkdirs(FCPATH.$path);
-		  $config['upload_path'] = FCPATH.$path;
+		  $config['upload_path'] = $this->path;
 		  $config['allowed_types'] = 'gif|jpg|png';
 		  $config['max_size'] = '3000';
 		  $config['max_width']  = '1024';
@@ -20,7 +23,7 @@ class upload extends MY_Controller{
 		  else
 		  {
 		  	$f = $this->upload->data();
-		  	$f['file_name'] = $path.$f['file_name'];
+		  	$f['file_name'] = $this->path.$f['file_name'];
 		   $res = json_encode(array('success'=>1,'result'=>$f));
 		  }
 		die($res);  
@@ -29,7 +32,7 @@ class upload extends MY_Controller{
 	//自动创建图片目录
 	public function mkdirs($dir)  {
 	 if(!is_dir($dir))  {
-	  if(!mkdir(dirname($dir))){ 
+	  if(!mkdir($dir)){ 
 	   return false;  
 	  } 
 	  if(!mkdir($dir,0777)){ 

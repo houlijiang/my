@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>简单实用国产jQuery UI框架 - DWZ富客户端框架(J-UI.com)</title>
+<title>CMS管理后台</title>
 
-<link href="/dwz/themes/default/style.css" rel="stylesheet" type="text/css" media="screen"/>
-<link href="/dwz/themes/css/core.css" rel="stylesheet" type="text/css" media="screen"/>
-<link href="/dwz/themes/css/print.css" rel="stylesheet" type="text/css" media="print"/>
-<link href="/dwz/uploadify/css/uploadify.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="/js/dwz/themes/default/style.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="/js/dwz/themes/css/core.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="/js/dwz/themes/css/print.css" rel="stylesheet" type="text/css" media="print"/>
+<link href="/js/dwz/uploadify/css/uploadify.css" rel="stylesheet" type="text/css" media="screen"/>
 <!--[if IE]>
 <link href="themes/css/ieHack.css" rel="stylesheet" type="text/css" media="screen"/>
 <![endif]-->
@@ -16,19 +16,19 @@
 <script src="js/speedup.js" type="text/javascript"></script>
 <![endif]-->
 
-<script src="/dwz/js/jquery-1.7.2.js" type="text/javascript"></script>
-<script src="/dwz/js/jquery.cookie.js" type="text/javascript"></script>
-<script src="/dwz/js/jquery.validate.js" type="text/javascript"></script>
-<script src="/dwz/js/jquery.bgiframe.js" type="text/javascript"></script>
-<script src="/dwz/xheditor/xheditor-1.2.1.min.js" type="text/javascript"></script>
-<script src="/dwz/xheditor/xheditor_lang/zh-cn.js" type="text/javascript"></script>
+<script src="/js/dwz/js/jquery-1.7.2.js" type="text/javascript"></script>
+<script src="/js/dwz/js/jquery.cookie.js" type="text/javascript"></script>
+<script src="/js/dwz/js/jquery.validate.js" type="text/javascript"></script>
+<script src="/js/dwz/js/jquery.bgiframe.js" type="text/javascript"></script>
+<script src="/js/dwz/xheditor/xheditor-1.2.1.min.js" type="text/javascript"></script>
+<script src="/js/dwz/xheditor/xheditor_lang/zh-cn.js" type="text/javascript"></script>
 
-<script src="/dwz/js/dwz.min.js" type="text/javascript"></script>
-<script src="/dwz/js/dwz.regional.zh.js" type="text/javascript"></script>
+<script src="/js/dwz/js/dwz.min.js" type="text/javascript"></script>
+<script src="/js/dwz/js/dwz.regional.zh.js" type="text/javascript"></script>
 <script src="/js/upload.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(function(){
-	DWZ.init("/dwz/dwz.frag.xml", {
+	DWZ.init("/js/dwz/dwz.frag.xml", {
 		loginUrl:"/admin/user/login", loginTitle:"登录",	// 弹出登录对话框
 //		loginUrl:"login.html",	// 跳到登录页面
 		statusCode:{ok:200, error:300, timeout:301}, //【可选】
@@ -36,7 +36,7 @@ $(function(){
 		debug:false,	// 调试模式 【true|false】
 		callback:function(){
 			initEnv();
-			$("#themeList").theme({themeBase:"/dwz/themes"}); // themeBase 相对于index页面的主题base路径
+			$("#themeList").theme({themeBase:"/js/dwz/themes"}); // themeBase 相对于index页面的主题base路径
 		}
 	});
 });
@@ -50,22 +50,18 @@ $(function(){
 			<div class="headerNav">
 				<a class="logo" href="#">标志</a>
 				<ul class="nav">
-					<li id="switchEnvBox"><a href="javascript:">（<span>北京</span>）切换城市</a>
-						<ul>
-							<li><a href="sidebar_1.html">北京</a></li>
-							<li><a href="sidebar_2.html">上海</a></li>
-							<li><a href="sidebar_2.html">南京</a></li>
-							<li><a href="sidebar_2.html">深圳</a></li>
-							<li><a href="sidebar_2.html">广州</a></li>
-							<li><a href="sidebar_2.html">天津</a></li>
-							<li><a href="sidebar_2.html">杭州</a></li>
-						</ul>
-					</li>
-					<li><a href="https://me.alipay.com/dwzteam" target="_blank">捐赠</a></li>
+<!--					<li id="switchEnvBox"><a href="javascript:">（<span>北京</span>）切换城市</a>-->
+<!--						<ul>-->
+<!--							<li><a href="sidebar_1.html">北京</a></li>-->
+<!--							<li><a href="sidebar_2.html">上海</a></li>-->
+<!--							<li><a href="sidebar_2.html">南京</a></li>-->
+<!--							<li><a href="sidebar_2.html">深圳</a></li>-->
+<!--							<li><a href="sidebar_2.html">广州</a></li>-->
+<!--							<li><a href="sidebar_2.html">天津</a></li>-->
+<!--							<li><a href="sidebar_2.html">杭州</a></li>-->
+<!--						</ul>-->
+<!--					</li>-->
 					<li><a href="/admin/user/change_pwd" target="dialog" width="600">设置</a></li>
-					<li><a href="http://www.cnblogs.com/dwzjs" target="_blank">博客</a></li>
-					<li><a href="http://weibo.com/dwzui" target="_blank">微博</a></li>
-					<li><a href="http://bbs.dwzjs.com" target="_blank">论坛</a></li>
 					<li><a href="/admin/user/logout">退出</a></li>
 				</ul>
 				<ul class="themeList" id="themeList">
@@ -93,111 +89,111 @@ $(function(){
 
 				<div class="accordion" fillSpace="sidebar">
 					<div class="accordionHeader">
-						<h2><span>Folder</span>界面组件</h2>
+						<h2><span>Folder</span>管理菜单</h2>
 					</div>
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
 							<li><a href="tabsPage.html" target="navTab">主框架面板</a>
 								<ul>
-									<li><a href="/admin/home/main" target="navTab" rel="main">我的主页</a></li>
+									<li><a href="/admin/category" target="navTab" rel="category">分类管理</a></li>
 									<li><a href="/admin/config" target="navTab" rel="config">站点配置</a></li>
 									<li><a href="/admin/goods" target="navTab" rel="goods">商品管理</a></li>
 									<li><a href="/admin/article" target="navTab" rel="article">文章管理</a></li>
-									<li><a href="/admin/advert" target="navTab" rel="advert">广告管理</a></li>
-									<li><a href="/dwz/demo_page4.html" target="navTab" rel="page3" title="页面三（自定义标签名）">页面三</a></li>
-									<li><a href="/dwz/demo_page4.html" target="navTab" rel="page4" fresh="false">测试页面（fresh="false"）</a></li>
-									<li><a href="/dwz/w_editor.html" target="navTab">表单提交会话超时</a></li>
-									<li><a href="/dwz/demo/common/ajaxTimeout.html" target="navTab">navTab会话超时</a></li>
-									<li><a href="/dwz/demo/common/ajaxTimeout.html" target="dialog">dialog会话超时</a></li>
-									<li><a href="/dwz/index_menu.html" target="_blank">横向导航条</a></li>
+									<li><a href="/admin/ad" target="navTab" rel="ad">广告管理</a></li>
+<!--									<li><a href="/dwz/demo_page4.html" target="navTab" rel="page3" title="页面三（自定义标签名）">页面三</a></li>-->
+<!--									<li><a href="/dwz/demo_page4.html" target="navTab" rel="page4" fresh="false">测试页面（fresh="false"）</a></li>-->
+<!--									<li><a href="/dwz/w_editor.html" target="navTab">表单提交会话超时</a></li>-->
+<!--									<li><a href="/dwz/demo/common/ajaxTimeout.html" target="navTab">navTab会话超时</a></li>-->
+<!--									<li><a href="/dwz/demo/common/ajaxTimeout.html" target="dialog">dialog会话超时</a></li>-->
+<!--									<li><a href="/dwz/index_menu.html" target="_blank">横向导航条</a></li>-->
 								</ul>
 							</li>
 							
-							<li><a>常用组件</a>
+							<li><a>帐号管理</a>
 								<ul>
-									<li><a href="/dwz/w_panel.html" target="navTab" rel="w_panel">面板</a></li>
-									<li><a href="/dwz/w_tabs.html" target="navTab" rel="w_tabs">选项卡面板</a></li>
-									<li><a href="/dwz/w_dialog.html" target="navTab" rel="w_dialog">弹出窗口</a></li>
-									<li><a href="/dwz/w_alert.html" target="navTab" rel="w_alert">提示窗口</a></li>
-									<li><a href="/dwz/w_list.html" target="navTab" rel="w_list">CSS表格容器</a></li>
-									<li><a href="/dwz/demo_page1.html" target="navTab" rel="w_table">表格容器</a></li>
-									<li><a href="/dwz/w_removeSelected.html" target="navTab" rel="w_table">表格数据库排序+批量删除</a></li>
-									<li><a href="/dwz/w_tree.html" target="navTab" rel="w_tree">树形菜单</a></li>
-									<li><a href="/dwz/w_accordion.html" target="navTab" rel="w_accordion">滑动菜单</a></li>
-									<li><a href="/dwz/w_editor.html" target="navTab" rel="w_editor">编辑器</a></li>
-									<li><a href="/dwz/w_datepicker.html" target="navTab" rel="w_datepicker">日期控件</a></li>
-									<li><a href="/dwz/demo/database/db_widget.html" target="navTab" rel="db">suggest+lookup+主从结构</a></li>
-									<li><a href="/dwz/demo/database/treeBringBack.html" target="navTab" rel="db">tree查找带回</a></li>
-									<li><a href="/dwz/demo/sortDrag/1.html" target="navTab" rel="sortDrag">单个sortDrag示例</a></li>
-									<li><a href="/dwz/demo/sortDrag/2.html" target="navTab" rel="sortDrag">多个sortDrag示例</a></li>
+									<li><a href="/admin/home/main" target="navTab" rel="w_panel">我的信息</a></li>
+									<li><a href="/admin/home/main" target="navTab" rel="w_tabs">修改密码</a></li>
+<!--									<li><a href="/dwz/w_dialog.html" target="navTab" rel="w_dialog">弹出窗口</a></li>-->
+<!--									<li><a href="/dwz/w_alert.html" target="navTab" rel="w_alert">提示窗口</a></li>-->
+<!--									<li><a href="/dwz/w_list.html" target="navTab" rel="w_list">CSS表格容器</a></li>-->
+<!--									<li><a href="/dwz/demo_page1.html" target="navTab" rel="w_table">表格容器</a></li>-->
+<!--									<li><a href="/dwz/w_removeSelected.html" target="navTab" rel="w_table">表格数据库排序+批量删除</a></li>-->
+<!--									<li><a href="/dwz/w_tree.html" target="navTab" rel="w_tree">树形菜单</a></li>-->
+<!--									<li><a href="/dwz/w_accordion.html" target="navTab" rel="w_accordion">滑动菜单</a></li>-->
+<!--									<li><a href="/dwz/w_editor.html" target="navTab" rel="w_editor">编辑器</a></li>-->
+<!--									<li><a href="/dwz/w_datepicker.html" target="navTab" rel="w_datepicker">日期控件</a></li>-->
+<!--									<li><a href="/dwz/demo/database/db_widget.html" target="navTab" rel="db">suggest+lookup+主从结构</a></li>-->
+<!--									<li><a href="/dwz/demo/database/treeBringBack.html" target="navTab" rel="db">tree查找带回</a></li>-->
+<!--									<li><a href="/dwz/demo/sortDrag/1.html" target="navTab" rel="sortDrag">单个sortDrag示例</a></li>-->
+<!--									<li><a href="/dwz/demo/sortDrag/2.html" target="navTab" rel="sortDrag">多个sortDrag示例</a></li>-->
 								</ul>
 							</li>
 									
-							<li><a>表单组件</a>
-								<ul>
-									<li><a href="/dwz/w_validation.html" target="navTab" rel="w_validation">表单验证</a></li>
-									<li><a href="/dwz/w_button.html" target="navTab" rel="w_button">按钮</a></li>
-									<li><a href="/dwz/w_textInput.html" target="navTab" rel="w_textInput">文本框/文本域</a></li>
-									<li><a href="/dwz/w_combox.html" target="navTab" rel="w_combox">下拉菜单</a></li>
-									<li><a href="/dwz/w_checkbox.html" target="navTab" rel="w_checkbox">多选框/单选框</a></li>
-									<li><a href="/dwz/demo_upload.html" target="navTab" rel="demo_upload">iframeCallback表单提交</a></li>
-									<li><a href="/dwz/w_uploadify.html" target="navTab" rel="w_uploadify">uploadify多文件上传</a></li>
-								</ul>
-							</li>
-							<li><a>组合应用</a>
-								<ul>
-									<li><a href="/dwz/demo/pagination/layout1.html" target="navTab" rel="pagination1">局部刷新分页1</a></li>
-									<li><a href="/dwz/demo/pagination/layout2.html" target="navTab" rel="pagination2">局部刷新分页2</a></li>
-								</ul>
-							</li>
-							<li><a>图表</a>
-								<ul>
-									<li><a href="chart/test/barchart.html" target="navTab" rel="chart">柱状图(垂直)</a></li>
-									<li><a href="chart/test/hbarchart.html" target="navTab" rel="chart">柱状图(水平)</a></li>
-									<li><a href="chart/test/linechart.html" target="navTab" rel="chart">折线图</a></li>
-									<li><a href="chart/test/linechart2.html" target="navTab" rel="chart">曲线图</a></li>
-									<li><a href="chart/test/linechart3.html" target="navTab" rel="chart">曲线图(自定义X坐标)</a></li>
-									<li><a href="chart/test/piechart.html" target="navTab" rel="chart">饼图</a></li>
-								</ul>
-							</li>
-							<li><a href="dwz.frag.xml" target="navTab" external="true">dwz.frag.xml</a></li>
-						</ul>
+<!--							<li><a>表单组件</a>-->
+<!--								<ul>-->
+<!--									<li><a href="/dwz/w_validation.html" target="navTab" rel="w_validation">表单验证</a></li>-->
+<!--									<li><a href="/dwz/w_button.html" target="navTab" rel="w_button">按钮</a></li>-->
+<!--									<li><a href="/dwz/w_textInput.html" target="navTab" rel="w_textInput">文本框/文本域</a></li>-->
+<!--									<li><a href="/dwz/w_combox.html" target="navTab" rel="w_combox">下拉菜单</a></li>-->
+<!--									<li><a href="/dwz/w_checkbox.html" target="navTab" rel="w_checkbox">多选框/单选框</a></li>-->
+<!--									<li><a href="/dwz/demo_upload.html" target="navTab" rel="demo_upload">iframeCallback表单提交</a></li>-->
+<!--									<li><a href="/dwz/w_uploadify.html" target="navTab" rel="w_uploadify">uploadify多文件上传</a></li>-->
+<!--								</ul>-->
+<!--							</li>-->
+<!--							<li><a>组合应用</a>-->
+<!--								<ul>-->
+<!--									<li><a href="/dwz/demo/pagination/layout1.html" target="navTab" rel="pagination1">局部刷新分页1</a></li>-->
+<!--									<li><a href="/dwz/demo/pagination/layout2.html" target="navTab" rel="pagination2">局部刷新分页2</a></li>-->
+<!--								</ul>-->
+<!--							</li>-->
+<!--							<li><a>图表</a>-->
+<!--								<ul>-->
+<!--									<li><a href="chart/test/barchart.html" target="navTab" rel="chart">柱状图(垂直)</a></li>-->
+<!--									<li><a href="chart/test/hbarchart.html" target="navTab" rel="chart">柱状图(水平)</a></li>-->
+<!--									<li><a href="chart/test/linechart.html" target="navTab" rel="chart">折线图</a></li>-->
+<!--									<li><a href="chart/test/linechart2.html" target="navTab" rel="chart">曲线图</a></li>-->
+<!--									<li><a href="chart/test/linechart3.html" target="navTab" rel="chart">曲线图(自定义X坐标)</a></li>-->
+<!--									<li><a href="chart/test/piechart.html" target="navTab" rel="chart">饼图</a></li>-->
+<!--								</ul>-->
+<!--							</li>-->
+<!--							<li><a href="dwz.frag.xml" target="navTab" external="true">dwz.frag.xml</a></li>-->
+<!--						</ul>-->
 					</div>
-					<div class="accordionHeader">
-						<h2><span>Folder</span>典型页面</h2>
-					</div>
-					<div class="accordionContent">
-						<ul class="tree treeFolder treeCheck">
-							<li><a href="demo_page1.html" target="navTab" rel="demo_page1">查询我的客户</a></li>
-							<li><a href="demo_page1.html" target="navTab" rel="demo_page2">表单查询页面</a></li>
-							<li><a href="demo_page4.html" target="navTab" rel="demo_page4">表单录入页面</a></li>
-							<li><a href="demo_page5.html" target="navTab" rel="demo_page5">有文本输入的表单</a></li>
-							<li><a href="javascript:;">有提示的表单输入页面</a>
-								<ul>
-									<li><a href="javascript:;">页面一</a></li>
-									<li><a href="javascript:;">页面二</a></li>
-								</ul>
-							</li>
-							<li><a href="javascript:;">选项卡和图形的页面</a>
-								<ul>
-									<li><a href="javascript:;">页面一</a></li>
-									<li><a href="javascript:;">页面二</a></li>
-								</ul>
-							</li>
-							<li><a href="javascript:;">选项卡和图形切换的页面</a></li>
-							<li><a href="javascript:;">左右两个互动的页面</a></li>
-							<li><a href="javascript:;">列表输入的页面</a></li>
-							<li><a href="javascript:;">双层栏目列表的页面</a></li>
-						</ul>
-					</div>
-					<div class="accordionHeader">
-						<h2><span>Folder</span>流程演示</h2>
-					</div>
-					<div class="accordionContent">
-						<ul class="tree">
-							<li><a href="newPage1.html" target="dialog" rel="dlg_page">列表</a></li>
-							<li><a href="newPage1.html" target="dialog" rel="dlg_page2">列表</a></li>
-						</ul>
+<!--					<div class="accordionHeader">-->
+<!--						<h2><span>Folder</span>典型页面</h2>-->
+<!--					</div>-->
+<!--					<div class="accordionContent">-->
+<!--						<ul class="tree treeFolder treeCheck">-->
+<!--							<li><a href="demo_page1.html" target="navTab" rel="demo_page1">查询我的客户</a></li>-->
+<!--							<li><a href="demo_page1.html" target="navTab" rel="demo_page2">表单查询页面</a></li>-->
+<!--							<li><a href="demo_page4.html" target="navTab" rel="demo_page4">表单录入页面</a></li>-->
+<!--							<li><a href="demo_page5.html" target="navTab" rel="demo_page5">有文本输入的表单</a></li>-->
+<!--							<li><a href="javascript:;">有提示的表单输入页面</a>-->
+<!--								<ul>-->
+<!--									<li><a href="javascript:;">页面一</a></li>-->
+<!--									<li><a href="javascript:;">页面二</a></li>-->
+<!--								</ul>-->
+<!--							</li>-->
+<!--							<li><a href="javascript:;">选项卡和图形的页面</a>-->
+<!--								<ul>-->
+<!--									<li><a href="javascript:;">页面一</a></li>-->
+<!--									<li><a href="javascript:;">页面二</a></li>-->
+<!--								</ul>-->
+<!--							</li>-->
+<!--							<li><a href="javascript:;">选项卡和图形切换的页面</a></li>-->
+<!--							<li><a href="javascript:;">左右两个互动的页面</a></li>-->
+<!--							<li><a href="javascript:;">列表输入的页面</a></li>-->
+<!--							<li><a href="javascript:;">双层栏目列表的页面</a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--					<div class="accordionHeader">-->
+<!--						<h2><span>Folder</span>流程演示</h2>-->
+<!--					</div>-->
+<!--					<div class="accordionContent">-->
+<!--						<ul class="tree">-->
+<!--							<li><a href="newPage1.html" target="dialog" rel="dlg_page">列表</a></li>-->
+<!--							<li><a href="newPage1.html" target="dialog" rel="dlg_page2">列表</a></li>-->
+<!--						</ul>-->
 					</div>
 				</div>
 			</div>
@@ -231,41 +227,6 @@ $(function(){
 							<p><span>DWZ富客户端框架</span></p>
 							<p>DWZ官方微博:<a href="http://weibo.com/dwzui" target="_blank">http://weibo.com/dwzui</a></p>
 						</div>
-						<div class="pageFormContent" layoutH="80" style="margin-right:230px">
-							
-							<p style="color:red">DWZ官方微博 <a href="http://weibo.com/dwzui" target="_blank">http://weibo.com/dwzui</a></p>
-							<p style="color:red">DWZ官方微群 <a href="http://q.weibo.com/587328/invitation=11TGXSt-148c2" target="_blank">http://q.weibo.com/587328/invitation=11TGXSt-148c2</a></p>
-
-<div class="divider"></div>
-<h2>dwz v1.2视频教程:</h2>
-<p><a href="http://www.u-training.com/thread-57-1-1.html" target="_blank">http://www.u-training.com/thread-57-1-1.html</a></p>
-
-<div class="divider"></div>
-<h2>DWZ系列开源项目:</h2>
-<div class="unit"><a href="http://code.google.com/p/dwz/" target="_blank">dwz富客户端框架 - jUI</a></div>
-<div class="unit"><a href="http://code.google.com/p/dwz4j" target="_blank">dwz4j(Java Web)快速开发框架 + jUI整合应用</a></div>
-<div class="unit"><a href="http://code.google.com/p/dwz4php" target="_blank">ThinkPHP + jUI整合应用</a></div>
-<div class="unit"><a href="http://code.google.com/p/dwz4php" target="_blank">Zend Framework + jUI整合应用</a></div>
-<div class="unit"><a href="http://www.yiiframework.com/extension/dwzinterface/" target="_blank">YII + jUI整合应用</a></div>
-
-<div class="divider"></div>
-<h2>常见问题及解决:</h2>
-<pre style="margin:5px;line-height:1.4em">
-Error loading XML document: dwz.frag.xml
-直接用IE打开index.html弹出一个对话框：Error loading XML document: dwz.frag.xml
-原因：没有加载成功dwz.frag.xml。IE ajax laod本地文件有限制, 是ie安全级别的问题, 不是框架的问题。
-解决方法：部署到apache 等 Web容器下。
-</pre>
-
-<div class="divider"></div>
-<h2>有偿服务请联系:</h2>
-<pre style="margin:5px;line-height:1.4em;">
-定制化开发，公司培训，技术支持
-合作电话：010-52897073
-邮箱：support@dwzjs.com
-</pre>
-						</div>
-						
 					</div>
 					
 				</div>
