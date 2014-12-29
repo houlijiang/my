@@ -41,7 +41,7 @@
 		<ul class="toolBar">
 			<li><a class="add" href="<?php echo base_url('admin/'.$this->uri->segment(2).'/add')?>" target="navTab" rel="edit"><span>添加</span></a></li>
 			<li><a class="delete" href="<?php echo base_url('admin/'.$this->uri->segment(2).'/del')?>/{sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
-			<li><a class="edit" href="<?php echo base_url('admin/'.$this->uri->segment(2).'/edit')?>/{sid_user}" target="navTab"><span>修改</span></a></li>
+			<li><a class="edit" href="<?php echo base_url('admin/'.$this->uri->segment(2).'/edit')?>/{sid_user}" target="navTab"  rel="edit"><span>修改</span></a></li>
 			<li class="line">line</li>
 			<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
 		</ul>
@@ -67,7 +67,7 @@
 				<td><?php echo $this->ad_model->state[$v['state']]?></td>
 				<td><?php echo $v['user_name']?></td>
 				<td><?php echo $v['create_time']?></td>
-				<td><?php echo anchor('/admin/advert/edit/'.$v['id'],'编辑','target="navTab" class="btnEdit"')?></td>
+				<td><?php echo anchor('/admin/ad/edit/'.$v['id'],'编辑','target="navTab" class="btnEdit"')?></td>
 			</tr>
 		<?php endforeach;?>
 		</tbody>

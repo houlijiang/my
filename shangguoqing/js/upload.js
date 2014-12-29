@@ -2,11 +2,11 @@
     $.fn.upload = function(options) { //定义插件的名称，这里为userCp
     	 var dft = {
                  url: "/admin/upload/do_upload",
-                 img:'http://m.jiukuaidao.com/images/nopic.png'
+                 img:'/images/nopic.gif'
          };
 		var ops = $.extend(dft,options);
 		if(ops.img==''){
-			ops.img = "http://m.jiukuaidao.com/images/nopic.png";
+			ops.img = "/images/nopic.gif";
 		}
 		var me = $(this);
 		$(this).addClass('fileInput');

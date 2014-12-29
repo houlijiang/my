@@ -66,11 +66,13 @@
 				<label>大图：</label>
 				<input id="goods_image" type="file" name="goods_image" value="<?php echo $info['goods_image']?>" />
 			</p>
-				<div class="unit">
-				<label>描述：</label>
-					<textarea class="editor" name="goods_desc" rows="6" cols="100"><?php echo $info['goods_desc']?></textarea>
+			<div class="divider"></div>
+				<dl>
+				<dt>描述：</dt>
+				<dd><textarea class="editor" name="goods_desc" rows="6" cols="100"><?php echo $info['goods_desc']?></textarea>
+				</dd>
 					<input type="hidden" name="id" value="<?php echo $info['id']?>">
-				</div>
+				</dl>
 			</div>
 			<div class="formBar">
 				<ul>

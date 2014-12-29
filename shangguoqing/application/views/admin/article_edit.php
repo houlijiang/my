@@ -46,11 +46,14 @@
 				<label>缩略图：</label>
 				<input id="article_thumb" type="file" name="article_thumb" value="<?php echo $info['article_thumb']?>"/>
 			</p>
-				<div class="unit">
-				<label>文章内容：</label>
+			<div class="divider"></div>
+				<dl>
+				<dt>文章内容：</dt>
+				<dd>
 					<textarea class="editor" name="content" rows="6" cols="100"><?php echo $info['content']?></textarea>
 					<input type="hidden" name="id" value="<?php echo $info['id']?>">
-				</div>
+					</dd>
+				</dl>
 			</div>
 			<div class="formBar">
 				<ul>

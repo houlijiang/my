@@ -25,7 +25,7 @@
 
 <script src="/js/dwz/js/dwz.min.js" type="text/javascript"></script>
 <script src="/js/dwz/js/dwz.regional.zh.js" type="text/javascript"></script>
-<script src="/js/upload.js" type="text/javascript"></script>
+<script src="/js/upload.js?v1" type="text/javascript"></script>
 <script type="text/javascript">
 $(function(){
 	DWZ.init("/js/dwz/dwz.frag.xml", {

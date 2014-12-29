@@ -38,7 +38,7 @@
 		<ul class="toolBar">
 			<li><a class="add" href="/admin/goods/add" target="navTab" rel="edit"><span>添加</span></a></li>
 			<li><a class="delete" href="/admin/goods/del/{sid_user}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
-			<li><a class="edit" href="/admin/goods/edit/{sid_user}" target="navTab"><span>修改</span></a></li>
+			<li><a class="edit" href="/admin/goods/edit/{sid_user}" target="navTab" rel="edit"><span>修改</span></a></li>
 			<li class="line">line</li>
 			<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
 		</ul>

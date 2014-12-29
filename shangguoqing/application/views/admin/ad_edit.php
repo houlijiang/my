@@ -23,7 +23,7 @@
 }
 </style>
 <div class="pageContent">
-		<form method="post" action="/admin/advert/update" class="pageForm required-validate" onsubmit="return validateCallback(this,navTabAjaxDone)">
+		<form method="post" action="/admin/ad/update" class="pageForm required-validate" onsubmit="return validateCallback(this,navTabAjaxDone)">
 			
 			<div class="pageFormContent" layoutH="56">
 			<p>
@@ -54,11 +54,12 @@
 				<label>缩略图：</label>
 				<input id="ad_image" type="file" name="ad_image" value="<?php echo $info['ad_image']?>"/>
 			</p>
-				<div class="unit">
-				<label>代码：</label>
-					<textarea class="editor" name="ad_code" rows="6" cols="100"><?php echo $info['ad_code']?></textarea>
+			<div class="divider"></div>
+			<dl>
+			<dt>代码：</dt>
+			<dd><textarea class="editor" name="ad_code" rows="6" cols="100"><?php echo $info['ad_code']?></textarea></dd>
 					<input type="hidden" name="id" value="<?php echo $info['id']?>">
-				</div>
+			</dl>
 			</div>
 			<div class="formBar">
 				<ul>
