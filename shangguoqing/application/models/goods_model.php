@@ -1,7 +1,8 @@
 <?php
 class goods_model extends MY_Model{
-	public function get_list(){
+	public function get_list($cat_id=0){
 		$post = $this->input->post();
+		$post['cat_id'] = $cat_id>0?$cat_id:$post['cat_id'];
 		$where = "where a.is_delete=0";
 		if(isset($post['cat_id']) && $post['cat_id']>0){
 			$where .= " and a.cat_id=".$post['cat_id'];
@@ -24,5 +25,8 @@ class goods_model extends MY_Model{
 		$sql .=" order by a.id desc limit {$post['limit']},{$post['page_size']}";
 		$post['list'] = $this->data->getAll($sql);
 		return $post;
+	}
+	public function get_info($id=0){
+		return $this->data->getRow("select * from cms_goods where id=$id");
 	}
 }

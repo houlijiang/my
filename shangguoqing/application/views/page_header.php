@@ -10,38 +10,6 @@
 <link rel="stylesheet" href="/css/common.css" type="text/css" />
 </head>
 <body >
-<!-- 顶条 -->
-<div class="topBar" id="topBar" >
-  <div class="top_box fl-clr">
-<div class="memberid" id="unlog">
-<span class="chgo_em">您好，欢迎来到中国供应商！</span>
-</div>
-    <div class="topNav">
-      <ul class="">
-        <li><a href="http://cn.china.cn" rel="nofollow" target="_blank" data-scode="30005">中国供应商首页</a></li>
-        <li><a href="http://shanghaivision.cn.china.cn/certificates.html" rel="nofollow" target="_blank" data-scode="30006">企业资质</a></li>
-        <li><a href="http://shanghaivision.cn.china.cn/sitemap/" target="_blank">产品地图</a></li>
-        <li class="before-bg"><a href="http://shanghaivision.cn.china.cn/contact-information/" rel="nofollow" target="_blank" data-scode="30007">联系我们</a></li>
-                <li class="quick-nav">
-          <div class="a_wrap"><a href="#">快速导航<span></span></a></div>
-          <div id="nav-hov" class="nav-hover" style="display: none;">
-            <dl>
-             <dt>会员中心</dt>
-            <dd><a href="http://my.cn.china.cn/manage.php?op=SellInfoCatNew" target="_blank" rel="nofollow" data-scode="30008">发布供应</a><a href="http://my.cn.china.cn/manage.php?op=BuyInfoShowNew" target="_blank" rel="nofollow" data-scode="30009">发布求购</a></dd>
-            <dd><a href="http://my.cn.china.cn/manage.php?op=CorpBaseInfoShowNew" target="_blank" rel="nofollow" data-scode="30010">公司信息</a><a href="http://my.cn.china.cn/manage.php?op=NoteListNew" target="_blank" rel="nofollow" data-scode="30011">查看留言</a></dd>
-          </dl>
-          <dl>
-            <dt>热点频道</dt>
-            <dd><a href="http://cn.china.cn/xinzengchanpin/" target="_blank" data-scode="30012">找产品</a><a href="http://cn.china.cn/buy/purchase/" target="_blank" rel="nofollow" data-scode="30013">优质采购</a></dd>
-            <dd><a href="http://cn.china.cn/xinzenggongsi/" target="_blank" data-scode="30014">找公司</a><a href="http://fair.china.cn" target="_blank">展会</a></dd>
-            <dd><a href="http://cn.china.cn/bangzhu.html" target="_blank" rel="nofollow" data-scode="30016">客服中心</a></dd>
-          </dl>
-          </div>
-        </li>
-      </ul>   
-    </div>
-  </div>
-</div><!-- top end -->
 <div class="header">
   <!-- Begin - Logo Bar -->
     <div class="ht section" id="logo_pic">
@@ -60,11 +28,10 @@
 <div class="wrap-bg-left" id="nav">
 	   <div class="wrap-bg-right">
 		  <ul class="mian-nav fl-clr">
-			  <li><a href="/" <?php echo empty($this->uri->segment(1))?'class="selected"':''?> data-scode="30017">企业首页</a></li>
-			  <li id="sup_infor"><a href="/supply"   data-scode="30018" <?php echo $this->uri->segment(1)=='supply'?'class="selected"':''?>>供应信息</a></li>
-              <li id="company_intro"><a href="http://shanghaivision.cn.china.cn/company-information.html"   rel="nofollow" data-scode="30020">企业介绍</a></li>
-              <li id="certificate"><a href="http://shanghaivision.cn.china.cn/certificates.html"   rel="nofollow" data-scode="30021">企业资质</a></li>
-              <li id="album"><a href="http://shanghaivision.cn.china.cn/photo-album.html"   rel="nofollow" data-scode="30026">企业相册</a></li>
+			  <li><a href="/" <?php echo empty($this->uri->segment(1))?'class="selected"':''?> >企业首页</a></li>
+			  <li id="sup_infor"><a href="/goods" <?php echo $this->uri->segment(1)=='goods'?'class="selected"':''?>>供应信息</a></li>
+              <li id="company_intro"><a href="/about" <?php echo $this->uri->segment(1)=='about'?'class="selected"':''?>  rel="nofollow" >企业介绍</a></li>
+              <li id="certificate"><a href="http://shanghaivision.cn.china.cn/certificates.html"   rel="nofollow" >企业资质</a></li>
               <li id="nav_links"><a href="/contact"  <?php echo $this->uri->segment(1)=='contact'?'class="selected"':''?>  rel="nofollow" data-scode="30022">联系方式</a></li>
 		  </ul>
 	  </div>

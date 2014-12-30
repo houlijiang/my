@@ -42,20 +42,15 @@
 		    <div class="lef-bd" data-cnrole="overlist">
 		        <div class="assists ">
 		        <ul class="dot">
+		        <?php foreach (model_data('category', 'data_list',1) as $k=>$v):?>
 		            <li  >
 		                <h4>
-		                    <a href="http://shanghaivision.cn.china.cn/supply/" rel="nofollow" title="全部" class="current" data-scode="30033">
-		                        全部<span>(1)</span>
+		                    <a href="/goods/<?php echo $k?>" rel="nofollow" title="<?php echo $v?>" <?php if($this->uri->segment(2)==$k):?>class="current"<?php endif;?>>
+		                        <?php echo $v?>
 		                    </a>
 		                </h4>
-		            </li>  
-		            <li  >
-		                <h4>
-		                    <a href="http://shanghaivision.cn.china.cn/supply/c967_1.html" rel="nofollow" title="闸阀"  data-scode="30033">
-		                        闸阀<span>(1)</span>
-		                    </a>
-		                </h4>
-		            </li>  
+		            </li> 
+		            <?php endforeach;?> 
 		        </ul>
 		        </div>
 		    </div>
@@ -73,4 +68,4 @@
 		         </ul>
 		    </div>
 		</div> 
-	    </div> <!-- cont-left end -->
+	</div> <!-- cont-left end -->

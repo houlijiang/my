@@ -78,15 +78,15 @@ class MY_Controller extends CI_Controller{
 			if(in_array("create_time", $this->get_fields())){
 				$post['create_time'] = date("Y-m-d H:i:s");
 			}
-			$otype = 3;
+			$otype = 1;
 			$res = $this->data->insert($this->table_name,$post);
 			if(in_array('insert_', $fun)){
 				$temp['id'] = $res;
 				$this->insert_($temp);
 			}
 		}
+		admin_log($otype, $temp); //记录操作日志
 		tojson($this->statusCode,$this->message,$this->natabId,$this->rel,$this->forwardUrl);
-	//	$this->operation_log($otype, $temp); //记录操作日志
 	}
 	
 	//删除
@@ -109,6 +109,7 @@ class MY_Controller extends CI_Controller{
 			$this->statusCode = 300;
 			$this->message = "删除失败!";
 		}
+		admin_log(3, $id); //记录操作日志
 		tojson($this->statusCode,$this->message,$this->natabId,$this->rel,$this->forwardUrl);
     }
     //还愿
@@ -126,7 +127,7 @@ class MY_Controller extends CI_Controller{
 			$this->err_msg = "恢复失败!";
 			$res = false;
 		}
-		$this->operation_log(5, $id); //记录操作日志
+		admin_log(2, $id); //记录操作日志
 		tojson($res?1:0,$this->err_code,$this->err_msg);
     }
     

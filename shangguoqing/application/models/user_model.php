@@ -22,6 +22,11 @@ class user_model extends MY_Model{
 		'user_name'=>$row['user_name']
 		);
 		$this->session->set_userdata($arr);
+		$uarr = array(
+			'last_login_time'=>date("Y-m-d H:i:s"),
+		);
+		$this->data->update('cms_admin_user',$uarr,array('id'=>$row['id']));
+		admin_log(0,$user_name);
 		tojson(200,'登录成功');
 	}
 }
