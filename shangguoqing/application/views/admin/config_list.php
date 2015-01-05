@@ -4,38 +4,6 @@
 	
 </form>
 
-
-<div class="pageHeader">
-	<form onsubmit="return navTabSearch(this);" action="/admin/config" method="post">
-	<div class="searchBar">
-		<table class="searchContent">
-			<tr>
-				<td>
-					我的客户：<input type="text" name="keyword" />
-				</td>
-				<td>
-<!--					<select class="combox" name="province">-->
-<!--						<option value="">所有省市</option>-->
-<!--						<option value="北京">北京</option>-->
-<!--						<option value="上海">上海</option>-->
-<!--						<option value="天津">天津</option>-->
-<!--						<option value="重庆">重庆</option>-->
-<!--						<option value="广东">广东</option>-->
-<!--					</select>-->
-				</td>
-				<td>
-					建档日期：<input type="text" class="date" readonly="true" />
-				</td>
-			</tr>
-		</table>
-		<div class="subBar">
-			<ul>
-				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
-			</ul>
-		</div>
-	</div>
-	</form>
-</div>
 <div class="pageContent">
 	<div class="panelBar">
 		<ul class="toolBar">

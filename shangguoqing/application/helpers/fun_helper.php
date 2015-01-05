@@ -10,7 +10,7 @@ function tojson($statusCode=200,$message='操作成功',$navTabId='',$rel='',$fo
 	if(!empty($forwardUrl)){
 		$arr['forwardUrl'] = $forwardUrl;
 	}
-	die(json_encode($arr,JSON_UNESCAPED_UNICODE));
+	die(json_encode($arr));
 }
 function config_data($key){
 	$ci = &get_instance();
@@ -29,7 +29,7 @@ function model_data($m,$f,$param=''){
  function admin_log($type=0,$data){
  	$ci = &get_instance();
  	$ci->load->library("data");
-    $data = is_array($data)?json_encode($data,JSON_UNESCAPED_UNICODE):$data;
+    $data = is_array($data)?json_encode($data):$data;
     $arr = array(
     'user_id'=>$ci->session->userdata('user_id'),
     'log_name'=>$ci->uri->segment(2),

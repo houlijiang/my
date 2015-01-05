@@ -29,4 +29,25 @@ class user_model extends MY_Model{
 		admin_log(0,$user_name);
 		tojson(200,'登录成功');
 	}
+	//修改密码
+	public function change_pwd(){
+		$user_id = $this->session->userdata('user_id');
+		$post = $this->input->post();
+		
+		if(empty($post['old_pwd']) || empty($post['new_pwd']) || empty($post['new_pwd1'])){
+			tojson(300,'密码不能为空');
+		};
+		$password = md5($post['old_pwd']);
+		$sql = "select * from cms_admin_user where id=$user_id and password='$password'";
+		$row = $this->data->getRow($sql);
+		if(empty($row)){
+			tojson(300,'旧密码有误');	
+		}
+		
+		$uarr = array(
+			'password'=>md5($post['new_pwd']),
+		);
+		$this->data->update('cms_admin_user',$uarr,array('id'=>$user_id));
+		tojson(200,'修改成功');
+	}
 }

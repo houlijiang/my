@@ -111,8 +111,8 @@ $(function(){
 							
 							<li><a>帐号管理</a>
 								<ul>
-									<li><a href="/admin/home/main" target="navTab" rel="w_panel">我的信息</a></li>
-									<li><a href="/admin/home/main" target="navTab" rel="w_tabs">修改密码</a></li>
+									<li><a href="/admin/user/add" target="navTab" rel="w_panel">我的信息</a></li>
+									<li><a href="/admin/user/change_pwd" target="navTab" rel="w_tabs">修改密码</a></li>
 <!--									<li><a href="/dwz/w_dialog.html" target="navTab" rel="w_dialog">弹出窗口</a></li>-->
 <!--									<li><a href="/dwz/w_alert.html" target="navTab" rel="w_alert">提示窗口</a></li>-->
 <!--									<li><a href="/dwz/w_list.html" target="navTab" rel="w_list">CSS表格容器</a></li>-->
@@ -217,15 +217,13 @@ $(function(){
 					<div class="page unitBox">
 						<div class="accountInfo">
 							<div class="alertInfo">
-								<h2><a href="doc/dwz-user-guide.pdf" target="_blank">DWZ框架使用手册(PDF)</a></h2>
-								<a href="doc/dwz-user-guide.swf" target="_blank">DWZ框架演示视频</a>
+								<h2>欢迎管理员：<?php echo $this->session->userdata('user_name')?></h2>
 							</div>
 							<div class="right">
 								<p><a href="doc/dwz-user-guide.zip" target="_blank" style="line-height:19px">DWZ框架使用手册(CHM)</a></p>
 								<p><a href="doc/dwz-ajax-develop.swf" target="_blank" style="line-height:19px">DWZ框架Ajax开发视频教材</a></p>
 							</div>
-							<p><span>DWZ富客户端框架</span></p>
-							<p>DWZ官方微博:<a href="http://weibo.com/dwzui" target="_blank">http://weibo.com/dwzui</a></p>
+							<p><span>新婚网管理后台</span></p>
 						</div>
 					</div>
 					
