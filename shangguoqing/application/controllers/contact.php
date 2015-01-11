@@ -1,5 +1,5 @@
 <?php
-class contact extends CI_Controller{
+class contact extends MY_Controller{
 	public function index(){
 		$this->load->view('contact');
 	}
