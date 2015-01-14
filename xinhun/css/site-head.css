@@ -1,0 +1,63 @@
+body {
+  color: #666;
+}
+.site-mast {
+  width: 100%;
+  background-color: #b81650;
+}
+.site-mast-branding {
+  width: 1200px;
+  height: 103px;
+  margin: 0 auto;
+}
+.site-logo {
+  float: left;
+  width: 140px;
+  height: 50px;
+  margin-top: 29px;
+  margin-left: 30px;
+  overflow: hidden;
+  text-indent: -100%;
+  /*border: solid 1px #000000;*/
+  background-image: url("../img/logo.png");
+  background-repeat: no-repeat;
+  background-size: 140px 50px;
+}
+.site-tip {
+  float: left;
+  width: 150px;
+  height: 40px;
+  overflow: hidden;
+  margin-top: 29px;
+  margin-left: 10px;
+  text-indent: -100%;
+  background-image: url("../img/sit-tip.png");
+  background-repeat: no-repeat;
+  background-size: 150px 40px;
+}
+.nav-tabs {
+  background-color: #ed5176;
+  padding-left: 2%;
+}
+.nav-border {
+  border: 0;
+  border-radius: 0;
+}
+.nav-tabs > li.active > a {
+  color: #ffffff;
+  background-color: #b81650;
+  border: 0;
+  border-radius: 0;
+}
+.nav-tabs > li.active > a :hover,
+.nav-tabs > li.active > a :focus {
+  background-color: #b81650;
+  border: 0;
+  border-radius: 0;
+}
+.nav-tabs > li > a {
+  border-radius: 0;
+}
+.nav > li > a {
+  color: #fff;
+}

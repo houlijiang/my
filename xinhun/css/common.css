@@ -1,0 +1,55 @@
+@charset "utf-8";
+/*
+*
+* 2013/10/31
+* 会员类型标志 MTsign-size
+*
+*/
+/* CSS Document */
+.MTsign-bar-pt,.MTsign-bar-mq,.MTsign-bar-xy,.MTsign-bar-xmt {background:url("../../img/common/member_sign/MTsigns-infbar.png") 0 0 no-repeat;display: block;width: 183px;height: 42px;line-height: 42px;margin:0 auto 8px;}
+
+.MTsign-bar-mq {background-position: center -8px;}
+.MTsign-bar-xy {background-position: center -67px;}
+.MTsign-bar-xmt {background-position: center -123px;}
+
+.MTsign-bar-mq span,.MTsign-bar-xy span,.MTsign-bar-xmt span {float: right;font-weight: bold;line-height: 42px;margin-right: 20px;color:#333;}
+.MTsign-bar-mq b,.MTsign-bar-xy b,.MTsign-bar-xmt b {color: #c70000;margin: 0 3px;}
+
+.middle-pt,.middle-mq,.middle-xy,.middle-xmt{background:url("../../img/common/member_sign/MTsigns-middle.png") 0 0 no-repeat;vertical-align: middle;display: inline-block;width: 116px;height: 27px;}
+.middle-mq{background-position:0 3px;}
+.middle-xy{background-position: 0 -26px;}
+.middle-xmt{background-position: 0 -56px;}
+
+.MT-mini-mq,.MT-mini-xy,.MT-mini-xmt {background:url("../../img/common/member_sign/MTsigns-mini.png") 0 0 no-repeat;}
+.MT-mini-mq {background-position:right 4px;}
+.MT-mini-xy {background-position:right -20px;}
+.MT-mini-xmt{background-position:right -44px;}
+
+.MTsign-bar-pt,.middle-pt{background:url("../../img/common/member_sign/MTsigns-pt.png") 0 0 no-repeat;}
+.MTsign-bar-pt {background-position:13px 0;}
+.middle-pt{background-position: 0 -54px;}
+/*
+*
+* 2014/2/18
+* 全站推广
+*/
+
+img{vertical-align:middle;}
+.detail-recommend {width:132px;position:absolute;right:-133px;box-shadow: 2px 0 2px #ccc;}
+.detail-recommend .r-head h3 {line-height:30px;text-align:center;background-color:#f7f7f7;color:#666;font-family: \5FAE\8F6F\96C5\9ED1,sans-serif;font-size:14px;}
+.detail-recommend .r-head {border: 1px  #e5e5e5 solid;border-bottom:0 none;padding-bottom:10px;}
+.switchable-content {position: absolute;left: 14px;top: 0;}
+.switchable-content li a.box-img{position:relative;display:block;border:1px #fff solid;}
+.switchable-content li a.box-img:hover{border-color:#c70000;}
+.switchable-content li .price {display:block;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF, endColorstr=#CCFFFFFF)\\8;background-color:rgba(255,255,255,0.8);color:#c70000;font-family:Arial;position:absolute;text-align:center;width:100px;top: 80px;left:0;line-height:20px;}
+.switchable-content li .re-text{height:22px;overflow:hidden;line-height: 22px;}
+/* .switchable-content {padding: 10px 0 0;} */
+.switchable-content li {height: 132px;width: 102px;}
+.detail-recommend .r-cont{background-color:#fff;}
+.forecom {height: 528px;overflow: hidden;padding: 0 14px;border-left:1px #e5e5e5 solid;border-right: 1px #e5e5e5 solid;position:relative;zoom:1;}
+.trun-key{height:22px;}
+.trun-key a{border:1px #e5e5e5 solid;background:url("../../img/common/atrrow.png") 0 0 no-repeat;width:64px;float:left;line-height:200px;height:20px;overflow:hidden;}
+.trun-key a.prev {background-position:center 5px;width:65px;}
+.trun-key a.next {background-position: center -33px;margin-left:-1px;}
+.trun-key a:hover {background-color:#f7f7f7;}
+

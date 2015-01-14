@@ -1,0 +1,50 @@
+.site-main {
+  clear: both;
+  padding-top: 10px;
+}
+@media (min-width: 1200px) {
+  .container {
+    padding-right: 71px;
+    padding-left: 71px;
+  }
+}
+.thumbnail a > img {
+  margin-top: 5px;
+}
+.price-color h4 {
+  color: #b81650;
+  text-align: left;
+}
+.price-color h4 span {
+  color: #999;
+  padding-left: 5px;
+  text-decoration: line-through;
+  font-size: 10px;
+}
+a.thumbnail {
+  border-radius: 0;
+  padding: 0;
+}
+a.thumbnail:hover {
+  border: 1px solid #e684a2;
+  box-shadow: 0 1px 4px;
+  text-decoration: none;
+}
+a.thumbnail > img {
+  margin-left: 0;
+  margin-right: 0;
+}
+.pagination > li > a {
+  color: #333;
+}
+.pagination > .active > a,
+.pagination > .active > a:hover {
+  background-color: #e87e9b;
+  border-color: #e87e9b;
+}
+.pagination-align {
+  text-align: center;
+}
+.pagination-align img {
+  vertical-align: inherit;
+}
