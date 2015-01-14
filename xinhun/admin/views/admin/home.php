@@ -93,22 +93,30 @@ $(function(){
 					</div>
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
-							<li><a href="tabsPage.html" target="navTab">主框架面板</a>
+							<li><a href="<?php echo site_url('goods')?>" target="navTab">商品管理</a>
+								<ul>
+									<li><a href="<?php echo site_url('goods/add')?>" target="navTab" rel="add">发布商品</a></li>
+									<li><a href="<?php echo site_url('goods')?>" target="navTab" rel="goods">商品列表</a></li>
+								</ul>
+							</li>
+							<li><a href="<?php echo site_url('article')?>" target="navTab">文章管理</a>
+								<ul>
+									<li><a href="<?php echo site_url('article/add')?>" target="navTab" rel="add">发布文章</a></li>
+									<li><a href="<?php echo site_url('article')?>" target="navTab" rel="article">文章列表</a></li>
+								</ul>
+							</li>
+							<li><a href="<?php echo site_url('ad')?>" target="navTab">广告管理</a>
+								<ul>
+									<li><a href="<?php echo site_url('ad/add')?>" target="navTab" rel="add">发布广告</a></li>
+									<li><a href="<?php echo site_url('ad')?>" target="navTab" rel="ad">广告列表</a></li>
+								</ul>
+							</li>
+							<li><a href="<?php echo site_url('category')?>" target="navTab">系统管理</a>
 								<ul>
 									<li><a href="<?php echo site_url('category')?>" target="navTab" rel="category">分类管理</a></li>
 									<li><a href="<?php echo site_url('config')?>" target="navTab" rel="config">站点配置</a></li>
-									<li><a href="<?php echo site_url('goods')?>" target="navTab" rel="goods">商品管理</a></li>
-									<li><a href="<?php echo site_url('article')?>" target="navTab" rel="article">文章管理</a></li>
-									<li><a href="<?php echo site_url('ad')?>" target="navTab" rel="ad">广告管理</a></li>
-<!--									<li><a href="/dwz/demo_page4.html" target="navTab" rel="page3" title="页面三（自定义标签名）">页面三</a></li>-->
-<!--									<li><a href="/dwz/demo_page4.html" target="navTab" rel="page4" fresh="false">测试页面（fresh="false"）</a></li>-->
-<!--									<li><a href="/dwz/w_editor.html" target="navTab">表单提交会话超时</a></li>-->
-<!--									<li><a href="/dwz/demo/common/ajaxTimeout.html" target="navTab">navTab会话超时</a></li>-->
-<!--									<li><a href="/dwz/demo/common/ajaxTimeout.html" target="dialog">dialog会话超时</a></li>-->
-<!--									<li><a href="/dwz/index_menu.html" target="_blank">横向导航条</a></li>-->
 								</ul>
 							</li>
-							
 							<li><a>帐号管理</a>
 								<ul>
 									<li><a href="<?php echo site_url('user/add')?>" target="navTab" rel="w_panel">我的信息</a></li>
