@@ -95,19 +95,19 @@ $(function(){
 						<ul class="tree treeFolder">
 							<li><a href="<?php echo site_url('goods')?>" target="navTab">商品管理</a>
 								<ul>
-									<li><a href="<?php echo site_url('goods/add')?>" target="navTab" rel="add">发布商品</a></li>
+									<li><a href="<?php echo site_url('goods/add')?>" target="navTab" rel="edit">发布商品</a></li>
 									<li><a href="<?php echo site_url('goods')?>" target="navTab" rel="goods">商品列表</a></li>
 								</ul>
 							</li>
 							<li><a href="<?php echo site_url('article')?>" target="navTab">文章管理</a>
 								<ul>
-									<li><a href="<?php echo site_url('article/add')?>" target="navTab" rel="add">发布文章</a></li>
+									<li><a href="<?php echo site_url('article/add')?>" target="navTab" rel="edit">发布文章</a></li>
 									<li><a href="<?php echo site_url('article')?>" target="navTab" rel="article">文章列表</a></li>
 								</ul>
 							</li>
 							<li><a href="<?php echo site_url('ad')?>" target="navTab">广告管理</a>
 								<ul>
-									<li><a href="<?php echo site_url('ad/add')?>" target="navTab" rel="add">发布广告</a></li>
+									<li><a href="<?php echo site_url('ad/add')?>" target="navTab" rel="edit">发布广告</a></li>
 									<li><a href="<?php echo site_url('ad')?>" target="navTab" rel="ad">广告列表</a></li>
 								</ul>
 							</li>

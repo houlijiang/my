@@ -1,5 +1,5 @@
 <div class="pageContent">
-	<form method="post" action="admin/upload/do_upload" enctype="multipart/form-data" class="pageForm required-validate" onsubmit="return iframeCallback(this);">
+	<form method="post" action="<?php echo site_url("upload/do_upload")?>" enctype="multipart/form-data" class="pageForm required-validate" onsubmit="return iframeCallback(this);">
 		<div class="pageFormContent" layoutH="56">
 			<p>
 				<label>文件一：</label>

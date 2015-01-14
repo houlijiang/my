@@ -6,6 +6,7 @@ class ad extends MY_Controller{
 		$this->model = 'ad_model';
 		$this->table_name = "cms_ad";
 		$this->load->model("ad_model");
+		$this->rel = "ad";
 	}
 	public function _index(&$data){
 		$data['position_list'] =$this->ad_model->position_list();

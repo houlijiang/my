@@ -1,7 +1,7 @@
 (function($){
     $.fn.upload = function(options) { //定义插件的名称，这里为userCp
     	 var dft = {
-                 url: "/admin/upload/do_upload",
+                 url: "/admin.php/upload/do_upload",
                  img:'/images/nopic.gif'
          };
 		var ops = $.extend(dft,options);

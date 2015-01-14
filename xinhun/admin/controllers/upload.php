@@ -23,7 +23,7 @@ class upload extends MY_Controller{
 		  else
 		  {
 		  	$f = $this->upload->data();
-		  	$f['file_name'] = $this->path.$f['file_name'];
+		  	$f['file_name'] = "/images/upload/".$f['file_name'];
 		   $res = json_encode(array('success'=>1,'result'=>$f));
 		  }
 		die($res);  
