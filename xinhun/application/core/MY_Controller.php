@@ -2,6 +2,6 @@
 class MY_Controller extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
-		$this->load->set_path('520');
+	//	$this->load->set_path('');
 	}
 }
