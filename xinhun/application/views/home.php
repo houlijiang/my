@@ -28,14 +28,13 @@
         <!-- Add your site or application content here -->
         <header class="site-mast">
             <!-- site master head -->
-            <div class="site-mast-branding">
+            <div class="site-mast-branding container">
                 <a class="site-logo" href="#" gaevent="header/logo">新婚网</a>
-                <span class="site-tip">标语</span>
             </div>
             <!-- bannar-->
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" ><a href="#">首页</a></li>
-                    <li role="presentation" class="active"><a href="#">促销喜品</a></li>
+                <ul class="nav nav-tabs " role="tablist">
+                    <li role="presentation" class="active"><a href="#">首页</a></li>
+                    <li role="presentation" ><a href="#">促销喜品</a></li>
                     <li role="presentation"><a href="#">结婚吧</a></li>
                 </ul>
         </header>
